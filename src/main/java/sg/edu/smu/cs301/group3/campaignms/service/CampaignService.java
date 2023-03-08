@@ -18,6 +18,7 @@ import java.util.Locale;
 public class CampaignService {
     @Autowired
     private final CampaignsRepository campaignsRepository;
+    private final SchedulerServiceAction schedulerServiceAction;
 
     private final SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);
 
@@ -40,28 +41,31 @@ public class CampaignService {
                 .cashbackAmount(campaignBean.getCashbackAmount())
                 .build();
         campaign.setActive(withinCampaignPeriod(campaign));
+        schedulerServiceAction.createCampaignScheduler(campaign);
         return campaignsRepository.save(campaign);
     }
 
     public Campaign editCampaign(CampaignBean campaignBean, int campaignId) throws Exception {
-        Campaign retrievedCampaign = campaignsRepository.getCampaignByCampaignId(campaignId);
+        Campaign campaign = campaignsRepository.getCampaignByCampaignId(campaignId);
         Date startDate = formatter.parse(campaignBean.getStartDate());
         Date endDate = formatter.parse(campaignBean.getEndDate());
-        if (retrievedCampaign == null) {
+        if (campaign == null) {
             throw new Exception("Campaign not found");
         }
-        retrievedCampaign.setTitle(campaignBean.getTitle());
-        retrievedCampaign.setStartDate(new Timestamp(startDate.getTime()).toString());
-        retrievedCampaign.setEndDate(new Timestamp(endDate.getTime()).toString());
-        retrievedCampaign.setMcc(campaignBean.getMcc());
-        retrievedCampaign.setMinDollarSpent(campaignBean.getMinDollarSpent());
-        retrievedCampaign.setPointsPerDollar(campaignBean.getPointsPerDollar());
-        retrievedCampaign.setCashbackAmount(campaignBean.getCashbackAmount());
-        retrievedCampaign.setActive(withinCampaignPeriod(retrievedCampaign));
-        return campaignsRepository.save(retrievedCampaign);
+        campaign.setTitle(campaignBean.getTitle());
+        campaign.setStartDate(new Timestamp(startDate.getTime()).toString());
+        campaign.setEndDate(new Timestamp(endDate.getTime()).toString());
+        campaign.setMcc(campaignBean.getMcc());
+        campaign.setMinDollarSpent(campaignBean.getMinDollarSpent());
+        campaign.setPointsPerDollar(campaignBean.getPointsPerDollar());
+        campaign.setCashbackAmount(campaignBean.getCashbackAmount());
+        campaign.setActive(withinCampaignPeriod(campaign));
+        schedulerServiceAction.editCampaignDate(campaign);
+        return campaignsRepository.save(campaign);
     }
 
     public Campaign deleteCampaign(int campaignId) {
+        schedulerServiceAction.deleteCampaignTask(campaignId);
         return campaignsRepository.deleteByCampaignId(campaignId);
     }
 

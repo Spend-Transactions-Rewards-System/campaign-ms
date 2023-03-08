@@ -1,5 +1,6 @@
 package sg.edu.smu.cs301.group3.campaignms.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import sg.edu.smu.cs301.group3.campaignms.beans.NotificationBean;
 import sg.edu.smu.cs301.group3.campaignms.model.Notification;
@@ -10,6 +11,7 @@ import java.util.stream.Collectors;
 
 @Service
 public class NotificationService {
+    @Autowired
     private final NotificationsRepository notificationsRepository;
 
     public NotificationService(NotificationsRepository notificationsRepository) {
