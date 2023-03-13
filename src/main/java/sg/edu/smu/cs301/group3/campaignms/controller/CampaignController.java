@@ -1,7 +1,6 @@
 package sg.edu.smu.cs301.group3.campaignms.controller;
 
 import lombok.RequiredArgsConstructor;
-import org.json.JSONObject;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import sg.edu.smu.cs301.group3.campaignms.beans.CampaignBean;
@@ -9,6 +8,7 @@ import sg.edu.smu.cs301.group3.campaignms.model.Campaign;
 import sg.edu.smu.cs301.group3.campaignms.service.CampaignService;
 import sg.edu.smu.cs301.group3.campaignms.service.NotificationService;
 
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -39,6 +39,12 @@ public class CampaignController {
     public ResponseEntity<Campaign> getCampaign(@PathVariable String id) {
         Campaign campaign = campaignService.getCampaign(Integer.parseInt(id));
         return ResponseEntity.ok(campaign);
+    }
+
+    @GetMapping("/campaign")
+    public ResponseEntity<List<Campaign>> getAllCampaign() {
+        List<Campaign> campaigns = campaignService.getAllCampaign();
+        return ResponseEntity.ok(campaigns);
     }
 
     @PutMapping("/campaign/{id}")
