@@ -11,6 +11,7 @@ import java.sql.Timestamp;
 import java.text.ParseException;
 import java.util.Date;
 import java.text.SimpleDateFormat;
+import java.util.List;
 import java.util.Locale;
 
 @Service
@@ -20,6 +21,10 @@ public class CampaignService {
     private final CampaignsRepository campaignsRepository;
 
     private final SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);
+
+    public List<Campaign> getAllCampaign() {
+        return campaignsRepository.findAll();
+    }
 
     public Campaign getCampaign(int id) {
         return campaignsRepository.getCampaignByCampaignId(id);
