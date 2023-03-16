@@ -26,8 +26,8 @@ public class CampaignService {
         return campaignsRepository.findAll();
     }
 
-    public Campaign getCampaign(int id) {
-        return campaignsRepository.getCampaignByCampaignId(id);
+    public Campaign getCampaignByCardId(int id) {
+        return campaignsRepository.getCampaignByCardProgramId(id);
     }
 
     public Campaign addCampaign(CampaignBean campaignBean) throws Exception {
