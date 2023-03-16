@@ -20,8 +20,7 @@ public class Campaign {
     private String endDate;
     private String mcc;
     private double minDollarSpent;
-    private double pointsPerDollar;
-    private int cardProgramId;
-    private double cashbackAmount;
+    private int rewardRate;
+    private long cardProgramId;
     private boolean isActive;
 }
