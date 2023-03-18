@@ -36,8 +36,9 @@ public class CampaignController {
     }
 
     @GetMapping("/campaign/{id}")
-    public ResponseEntity<Campaign> getCampaign(@PathVariable String id) {
-        Campaign campaign = campaignService.getCampaign(Integer.parseInt(id));
+    public ResponseEntity<Campaign> getCampaignByCardId(@PathVariable String id) {
+        Campaign campaign = campaignService.getCampaignByCardId(Integer.parseInt(id));
+        System.out.println(campaign);
         return ResponseEntity.ok(campaign);
     }
 

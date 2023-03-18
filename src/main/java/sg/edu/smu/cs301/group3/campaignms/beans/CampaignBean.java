@@ -18,7 +18,7 @@ public class CampaignBean {
     @JsonProperty("min_dollar_spent")
     private int minDollarSpent;
     @JsonProperty("points_per_dollar")
-    private double pointsPerDollar;
+    private int pointsPerDollar;
     @JsonProperty("card_program_id")
     private int cardProgramId;
     @JsonProperty("cashback_amount")

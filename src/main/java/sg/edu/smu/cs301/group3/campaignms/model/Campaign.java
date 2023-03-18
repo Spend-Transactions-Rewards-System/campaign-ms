@@ -7,21 +7,22 @@ import org.springframework.data.annotation.Id;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Table;
+import java.sql.Timestamp;
 
 @Data
-@Table(name = "campaigns")
+@Table(name = "campaign")
 @Builder
 public class Campaign {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private int campaignId;
     private String title;
-    private String startDate;
-    private String endDate;
+    private Timestamp startDate;
+    private Timestamp endDate;
     private String mcc;
     private double minDollarSpent;
-    private double pointsPerDollar;
+    private int rewardRate;
     private int cardProgramId;
-    private double cashbackAmount;
     private boolean isActive;
+    private String customCategory;
 }

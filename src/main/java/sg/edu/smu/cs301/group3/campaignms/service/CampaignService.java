@@ -26,8 +26,9 @@ public class CampaignService {
         return campaignsRepository.findAll();
     }
 
-    public Campaign getCampaign(int id) {
-        return campaignsRepository.getCampaignByCampaignId(id);
+    public Campaign getCampaignByCardId(int id) {
+        var c = campaignsRepository.getCampaignByCardProgramId(id);
+        return c;
     }
 
     public Campaign addCampaign(CampaignBean campaignBean) throws Exception {
@@ -36,13 +37,12 @@ public class CampaignService {
         Campaign campaign = Campaign
                 .builder()
                 .title(campaignBean.getTitle())
-                .startDate(new Timestamp(startDate.getTime()).toString())
-                .endDate(new Timestamp(endDate.getTime()).toString())
+                .startDate(new Timestamp(startDate.getTime()))
+                .endDate(new Timestamp(endDate.getTime()))
                 .mcc(campaignBean.getMcc())
                 .minDollarSpent(campaignBean.getMinDollarSpent())
-                .pointsPerDollar(campaignBean.getPointsPerDollar())
+                .rewardRate(campaignBean.getPointsPerDollar())
                 .cardProgramId(campaignBean.getCardProgramId())
-                .cashbackAmount(campaignBean.getCashbackAmount())
                 .build();
         campaign.setActive(withinCampaignPeriod(campaign));
         return campaignsRepository.save(campaign);
@@ -56,12 +56,11 @@ public class CampaignService {
             throw new Exception("Campaign not found");
         }
         retrievedCampaign.setTitle(campaignBean.getTitle());
-        retrievedCampaign.setStartDate(new Timestamp(startDate.getTime()).toString());
-        retrievedCampaign.setEndDate(new Timestamp(endDate.getTime()).toString());
+        retrievedCampaign.setStartDate(new Timestamp(startDate.getTime()));
+        retrievedCampaign.setEndDate(new Timestamp(endDate.getTime()));
         retrievedCampaign.setMcc(campaignBean.getMcc());
         retrievedCampaign.setMinDollarSpent(campaignBean.getMinDollarSpent());
-        retrievedCampaign.setPointsPerDollar(campaignBean.getPointsPerDollar());
-        retrievedCampaign.setCashbackAmount(campaignBean.getCashbackAmount());
+        retrievedCampaign.setRewardRate(campaignBean.getPointsPerDollar());
         retrievedCampaign.setActive(withinCampaignPeriod(retrievedCampaign));
         return campaignsRepository.save(retrievedCampaign);
     }
@@ -71,13 +70,6 @@ public class CampaignService {
     }
 
     private boolean withinCampaignPeriod(Campaign campaign) {
-        try {
-            Date startDate = formatter.parse(campaign.getStartDate());
-            Date endDate = formatter.parse(campaign.getEndDate());
-            return startDate.before(new Date(System.currentTimeMillis())) && endDate.after(new Date(System.currentTimeMillis()));
-        } catch (ParseException e) {
-            e.printStackTrace();
-            return false;
-        }
+        return campaign.getStartDate().before(new Date(System.currentTimeMillis())) && campaign.getEndDate().after(new Date(System.currentTimeMillis()));
     }
 }
