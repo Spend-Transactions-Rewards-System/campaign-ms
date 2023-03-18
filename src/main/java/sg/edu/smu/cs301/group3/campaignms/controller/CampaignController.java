@@ -19,8 +19,7 @@ public class CampaignController {
     private final NotificationService notificationService;
     @GetMapping("/")
     public ResponseEntity<String> checkPulse() {
-        System.out.println("hello");
-        return ResponseEntity.ok("Campaign sm at your service");
+        return ResponseEntity.ok("Campaign-Rewards ms at your service");
     }
     @PostMapping("/campaign")
     public ResponseEntity<String> addCampaign(@RequestBody CampaignBean campaignBean) {
@@ -36,14 +35,18 @@ public class CampaignController {
     }
 
     @GetMapping("/campaign/{id}")
-    public ResponseEntity<List<Campaign>> getCampaignByCardId(@PathVariable String id) {
-        List<Campaign> campaigns = campaignService.getCampaignByCardId(Integer.parseInt(id));
-        return ResponseEntity.ok(campaigns);
+    public ResponseEntity<List<CampaignBean>> getCampaignByCardId(@PathVariable String id) {
+        List<CampaignBean> campaignBeans = campaignService.getCampaignByCardId(Integer.parseInt(id))
+                .stream().map(campaign -> CampaignBean.fromCampaignModel(campaign, notificationService
+                        .getNotificationsByCampaignId(campaign.getCampaignId()))).toList();
+        return ResponseEntity.ok(campaignBeans);
     }
 
     @GetMapping("/campaign")
-    public ResponseEntity<List<Campaign>> getAllCampaign() {
-        List<Campaign> campaigns = campaignService.getAllCampaign();
+    public ResponseEntity<List<CampaignBean>> getAllCampaign() {
+        List<CampaignBean> campaigns = campaignService.getAllCampaign()
+                .stream().map(campaign -> CampaignBean.fromCampaignModel(campaign, notificationService
+                        .getNotificationsByCampaignId(campaign.getCampaignId()))).toList();
         return ResponseEntity.ok(campaigns);
     }
 
