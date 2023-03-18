@@ -21,6 +21,7 @@ public class Campaign {
     private String mcc;
     private double minDollarSpent;
     private int rewardRate;
-    private long cardProgramId;
+    private int cardProgramId;
     private boolean isActive;
+    private String customCategory;
 }

@@ -40,9 +40,8 @@ public class CampaignService {
                 .endDate(new Timestamp(endDate.getTime()).toString())
                 .mcc(campaignBean.getMcc())
                 .minDollarSpent(campaignBean.getMinDollarSpent())
-                .pointsPerDollar(campaignBean.getPointsPerDollar())
+                .rewardRate(campaignBean.getPointsPerDollar())
                 .cardProgramId(campaignBean.getCardProgramId())
-                .cashbackAmount(campaignBean.getCashbackAmount())
                 .build();
         campaign.setActive(withinCampaignPeriod(campaign));
         return campaignsRepository.save(campaign);
@@ -60,8 +59,7 @@ public class CampaignService {
         retrievedCampaign.setEndDate(new Timestamp(endDate.getTime()).toString());
         retrievedCampaign.setMcc(campaignBean.getMcc());
         retrievedCampaign.setMinDollarSpent(campaignBean.getMinDollarSpent());
-        retrievedCampaign.setPointsPerDollar(campaignBean.getPointsPerDollar());
-        retrievedCampaign.setCashbackAmount(campaignBean.getCashbackAmount());
+        retrievedCampaign.setRewardRate(campaignBean.getPointsPerDollar());
         retrievedCampaign.setActive(withinCampaignPeriod(retrievedCampaign));
         return campaignsRepository.save(retrievedCampaign);
     }
