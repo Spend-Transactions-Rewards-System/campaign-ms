@@ -8,7 +8,6 @@ import sg.edu.smu.cs301.group3.campaignms.model.Campaign;
 import sg.edu.smu.cs301.group3.campaignms.repository.CampaignsRepository;
 
 import java.sql.Timestamp;
-import java.text.ParseException;
 import java.util.Date;
 import java.text.SimpleDateFormat;
 import java.util.List;
@@ -26,9 +25,8 @@ public class CampaignService {
         return campaignsRepository.findAll();
     }
 
-    public Campaign getCampaignByCardId(int id) {
-        var c = campaignsRepository.getCampaignByCardProgramId(id);
-        return c;
+    public List<Campaign> getCampaignByCardId(int id) {
+        return campaignsRepository.getCampaignsByCardProgramId(id);
     }
 
     public Campaign addCampaign(CampaignBean campaignBean) throws Exception {
