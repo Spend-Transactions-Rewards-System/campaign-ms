@@ -9,7 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Table;
 
 @Data
-@Table(name = "campaigns")
+@Table(name = "campaign")
 @Builder
 public class Campaign {
     @Id
