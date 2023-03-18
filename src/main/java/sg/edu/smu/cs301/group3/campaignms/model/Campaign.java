@@ -7,6 +7,7 @@ import org.springframework.data.annotation.Id;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Table;
+import java.sql.Timestamp;
 
 @Data
 @Table(name = "campaign")
@@ -16,8 +17,8 @@ public class Campaign {
     @GeneratedValue(strategy= GenerationType.AUTO)
     private int campaignId;
     private String title;
-    private String startDate;
-    private String endDate;
+    private Timestamp startDate;
+    private Timestamp endDate;
     private String mcc;
     private double minDollarSpent;
     private int rewardRate;
