@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface CampaignsRepository extends JpaRepository<Campaign, Long> {
     List<Campaign> getCampaignsByCardProgramId(int id);
-    Campaign getCampaignByCampaignId(int id);
-    Campaign deleteByCampaignId(int id);
+    Campaign getCampaignByCampaignId(Long id);
+    Campaign deleteByCampaignId(Long id);
     List<Campaign> findAll();
 }

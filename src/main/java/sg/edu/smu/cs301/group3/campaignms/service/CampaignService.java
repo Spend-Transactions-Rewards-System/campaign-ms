@@ -46,7 +46,7 @@ public class CampaignService {
         return campaignsRepository.save(campaign);
     }
 
-    public Campaign editCampaign(CampaignBean campaignBean, int campaignId) throws Exception {
+    public Campaign editCampaign(CampaignBean campaignBean, Long campaignId) throws Exception {
         Campaign retrievedCampaign = campaignsRepository.getCampaignByCampaignId(campaignId);
         Date startDate = formatter.parse(campaignBean.getStartDate());
         Date endDate = formatter.parse(campaignBean.getEndDate());
@@ -63,7 +63,7 @@ public class CampaignService {
         return campaignsRepository.save(retrievedCampaign);
     }
 
-    public Campaign deleteCampaign(int campaignId) {
+    public Campaign deleteCampaign(Long campaignId) {
         return campaignsRepository.deleteByCampaignId(campaignId);
     }
 

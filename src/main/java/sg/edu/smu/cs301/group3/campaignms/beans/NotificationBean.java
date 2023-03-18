@@ -15,7 +15,7 @@ public class NotificationBean {
     private String notificationMessage;
 
     @JsonProperty("campaign_id")
-    private int campaignId;
+    private Long campaignId;
 
     public static NotificationBean fromNotificationModel(Notification notification) {
         return NotificationBean.builder()

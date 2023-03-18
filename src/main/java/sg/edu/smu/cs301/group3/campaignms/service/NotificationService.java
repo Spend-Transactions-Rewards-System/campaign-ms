@@ -18,7 +18,7 @@ public class NotificationService {
 
     public List<Notification> addNotificationsInBulk(List<NotificationBean> notificationBeans, Long campaignId) {
         return notificationBeans.stream().map(notificationBean -> {
-            notificationBean.setCampaignId(campaignId.intValue());
+            notificationBean.setCampaignId(campaignId.longValue());
             Notification notification = Notification.builder()
                     .title(notificationBean.getNotificationTitle())
                     .message(notificationBean.getNotificationMessage())
@@ -30,11 +30,11 @@ public class NotificationService {
         }).collect(Collectors.toList());
     }
 
-    public void deleteNotificationsByCampaignId(int campaignId) {
+    public void deleteNotificationsByCampaignId(Long campaignId) {
         notificationsRepository.deleteAllByCampaignId(campaignId);
     }
 
-    public List<Notification> getNotificationsByCampaignId(int campaignId) {
+    public List<Notification> getNotificationsByCampaignId(Long campaignId) {
         return notificationsRepository.getNotificationsByCampaignId(campaignId);
     }
 }

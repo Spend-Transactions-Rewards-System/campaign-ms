@@ -16,5 +16,5 @@ public class Notification {
     private String message;
     private String title;
     private String platform;
-    private int campaignId;
+    private Long campaignId;
 }
