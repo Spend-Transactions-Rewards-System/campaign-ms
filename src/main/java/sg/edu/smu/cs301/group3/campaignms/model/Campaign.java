@@ -2,15 +2,13 @@ package sg.edu.smu.cs301.group3.campaignms.model;
 
 import lombok.Builder;
 import lombok.Data;
-import org.springframework.data.annotation.Id;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Table;
+import jakarta.persistence.*;
 import java.sql.Timestamp;
 
 @Data
 @Table(name = "campaign")
+@Entity
 @Builder
 public class Campaign {
     @Id

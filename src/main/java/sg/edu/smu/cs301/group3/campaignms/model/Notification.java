@@ -2,15 +2,13 @@ package sg.edu.smu.cs301.group3.campaignms.model;
 
 import lombok.Builder;
 import lombok.Data;
-import org.springframework.data.annotation.Id;
 import sg.edu.smu.cs301.group3.campaignms.beans.NotificationBean;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Table;
+import jakarta.persistence.*;
 
 @Data
 @Table(name = "notification")
+@Entity
 @Builder
 public class Notification {
     @Id
