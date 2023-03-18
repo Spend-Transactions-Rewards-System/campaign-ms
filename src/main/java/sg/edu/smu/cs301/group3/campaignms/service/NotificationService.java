@@ -16,9 +16,9 @@ public class NotificationService {
         this.notificationsRepository = notificationsRepository;
     }
 
-    public List<Notification> addNotificationsInBulk(List<NotificationBean> notificationBeans, int campaignId) {
+    public List<Notification> addNotificationsInBulk(List<NotificationBean> notificationBeans, Long campaignId) {
         return notificationBeans.stream().map(notificationBean -> {
-            notificationBean.setCampaignId(campaignId);
+            notificationBean.setCampaignId(campaignId.intValue());
             Notification notification = Notification.builder()
                     .title(notificationBean.getNotificationTitle())
                     .message(notificationBean.getNotificationMessage())

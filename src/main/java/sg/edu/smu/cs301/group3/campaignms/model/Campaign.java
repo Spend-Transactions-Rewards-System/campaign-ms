@@ -1,21 +1,21 @@
 package sg.edu.smu.cs301.group3.campaignms.model;
 
+import jakarta.persistence.*;
 import lombok.Builder;
 import lombok.Data;
-import org.springframework.data.annotation.Id;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Table;
+
 import java.sql.Timestamp;
 
 @Data
 @Table(name = "campaign")
 @Builder
+@Entity
 public class Campaign {
+
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    private int campaignId;
+    private Long campaignId;
     private String title;
     private Timestamp startDate;
     private Timestamp endDate;
