@@ -1,11 +1,16 @@
 package sg.edu.smu.cs301.group3.campaignms.beans;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Builder;
 import lombok.Data;
+import sg.edu.smu.cs301.group3.campaignms.model.Campaign;
+import sg.edu.smu.cs301.group3.campaignms.model.Notification;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Data
+@Builder
 public class CampaignBean {
     @JsonProperty("title")
     private String title;
@@ -16,15 +21,27 @@ public class CampaignBean {
     @JsonProperty("mcc")
     private String mcc;
     @JsonProperty("min_dollar_spent")
-    private int minDollarSpent;
+    private double minDollarSpent;
     @JsonProperty("points_per_dollar")
     private int pointsPerDollar;
     @JsonProperty("card_program_id")
-    private int cardProgramId;
-    @JsonProperty("cashback_amount")
-    private double cashbackAmount;
+    private Long cardProgramId;
     @JsonProperty("notifications_list")
     private List<NotificationBean> notificationBeanList;
 
+    public static CampaignBean fromCampaignModel(Campaign campaign, List<Notification> notifications) {
+        return CampaignBean.builder()
+                .title(campaign.getTitle())
+                .startDate(campaign.getStartDate().toString())
+                .endDate(campaign.getEndDate().toString())
+                .mcc(campaign.getMcc())
+                .minDollarSpent(campaign.getMinDollarSpent())
+                .pointsPerDollar(campaign.getRewardRate())
+                .cardProgramId(campaign.getCardType().getId())
+                .notificationBeanList(notifications.stream()
+                        .map(NotificationBean::fromNotificationModel)
+                        .collect(Collectors.toList()))
+                .build();
+    }
 
 }

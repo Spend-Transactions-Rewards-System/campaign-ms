@@ -13,10 +13,10 @@ services:
       - campaign_db_vol:/var/lib/mysql
     ports:
       - '3306:3306'
-  campaign_rewards_ms:
-    image: campaign-rewards-ms
-    build: .
-    ports:
-      - '8080:8080'
+#  campaign_rewards_ms:
+#    image: campaign-rewards-ms
+#    build: .
+#    ports:
+#      - '8080:8080'
 volumes:
   campaign_db_vol:
