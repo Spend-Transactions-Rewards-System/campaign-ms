@@ -1,11 +1,12 @@
 package sg.edu.smu.cs301.group3.campaignms.service;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import sg.edu.smu.cs301.group3.campaignms.beans.CampaignBean;
 import sg.edu.smu.cs301.group3.campaignms.model.Campaign;
+import sg.edu.smu.cs301.group3.campaignms.model.CardType;
 import sg.edu.smu.cs301.group3.campaignms.repository.CampaignsRepository;
+import sg.edu.smu.cs301.group3.campaignms.repository.CardTypeRepository;
 
 import java.sql.Timestamp;
 import java.util.Date;
@@ -16,8 +17,8 @@ import java.util.Locale;
 @Service
 @RequiredArgsConstructor
 public class CampaignService {
-    @Autowired
     private final CampaignsRepository campaignsRepository;
+    private final CardTypeRepository cardTypeRepository;
 
     private final SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);
 
@@ -25,11 +26,19 @@ public class CampaignService {
         return campaignsRepository.findAll();
     }
 
-    public List<Campaign> getCampaignByCardId(int id) {
-        return campaignsRepository.getCampaignsByCardProgramId(id);
+    public List<Campaign> getCampaignByCardId(Long id) {
+
+        CardType cardType = cardTypeRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException(id + " not found"));
+
+        return campaignsRepository.getCampaignsByCardType(cardType);
     }
 
     public Campaign addCampaign(CampaignBean campaignBean) throws Exception {
+
+        CardType cardType = cardTypeRepository.findById(campaignBean.getCardProgramId())
+                .orElseThrow(() -> new RuntimeException(campaignBean.getCardProgramId() + " not found"));
+
         Date startDate = formatter.parse(campaignBean.getStartDate());
         Date endDate = formatter.parse(campaignBean.getEndDate());
         Campaign campaign = Campaign
@@ -40,7 +49,7 @@ public class CampaignService {
                 .mcc(campaignBean.getMcc())
                 .minDollarSpent(campaignBean.getMinDollarSpent())
                 .rewardRate(campaignBean.getPointsPerDollar())
-                .cardProgramId(campaignBean.getCardProgramId())
+                .cardType(cardType)
                 .build();
         campaign.setActive(withinCampaignPeriod(campaign));
         return campaignsRepository.save(campaign);

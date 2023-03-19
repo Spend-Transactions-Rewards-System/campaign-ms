@@ -36,7 +36,7 @@ public class CampaignController {
 
     @GetMapping("/campaign/{id}")
     public ResponseEntity<List<CampaignBean>> getCampaignByCardId(@PathVariable String id) {
-        List<CampaignBean> campaignBeans = campaignService.getCampaignByCardId(Integer.parseInt(id))
+        List<CampaignBean> campaignBeans = campaignService.getCampaignByCardId(Long.parseLong(id))
                 .stream().map(campaign -> CampaignBean.fromCampaignModel(campaign, notificationService
                         .getNotificationsByCampaignId(campaign.getCampaignId()))).toList();
         return ResponseEntity.ok(campaignBeans);

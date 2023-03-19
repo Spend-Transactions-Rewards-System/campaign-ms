@@ -26,7 +26,9 @@ public class Campaign {
     private String mcc;
     private double minDollarSpent;
     private int rewardRate;
-    private int cardProgramId;
+
+    @OneToOne(cascade = {CascadeType.REFRESH})
+    private CardType cardType;
     private boolean isActive;
     private String customCategory;
 }

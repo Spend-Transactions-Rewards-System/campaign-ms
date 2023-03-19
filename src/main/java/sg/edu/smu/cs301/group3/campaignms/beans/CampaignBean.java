@@ -25,7 +25,7 @@ public class CampaignBean {
     @JsonProperty("points_per_dollar")
     private int pointsPerDollar;
     @JsonProperty("card_program_id")
-    private int cardProgramId;
+    private Long cardProgramId;
     @JsonProperty("notifications_list")
     private List<NotificationBean> notificationBeanList;
 
@@ -37,7 +37,7 @@ public class CampaignBean {
                 .mcc(campaign.getMcc())
                 .minDollarSpent(campaign.getMinDollarSpent())
                 .pointsPerDollar(campaign.getRewardRate())
-                .cardProgramId(campaign.getCardProgramId())
+                .cardProgramId(campaign.getCardType().getId())
                 .notificationBeanList(notifications.stream()
                         .map(NotificationBean::fromNotificationModel)
                         .collect(Collectors.toList()))
