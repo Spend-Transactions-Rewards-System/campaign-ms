@@ -21,7 +21,7 @@ public class NotificationBean {
         return NotificationBean.builder()
                 .notificationTitle(notification.getTitle())
                 .notificationMessage(notification.getMessage())
-                .campaignId(notification.getCampaignId())
+                .campaignId(notification.getCampaign().getCampaignId())
                 .build();
     }
 }

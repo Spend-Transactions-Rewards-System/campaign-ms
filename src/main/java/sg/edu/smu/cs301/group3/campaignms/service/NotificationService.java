@@ -1,40 +1,48 @@
 package sg.edu.smu.cs301.group3.campaignms.service;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import sg.edu.smu.cs301.group3.campaignms.beans.NotificationBean;
+import sg.edu.smu.cs301.group3.campaignms.model.Campaign;
 import sg.edu.smu.cs301.group3.campaignms.model.Notification;
+import sg.edu.smu.cs301.group3.campaignms.repository.CampaignsRepository;
 import sg.edu.smu.cs301.group3.campaignms.repository.NotificationsRepository;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
+@RequiredArgsConstructor
 public class NotificationService {
     private final NotificationsRepository notificationsRepository;
-
-    public NotificationService(NotificationsRepository notificationsRepository) {
-        this.notificationsRepository = notificationsRepository;
-    }
+    private final CampaignsRepository campaignsRepository;
 
     public List<Notification> addNotificationsInBulk(List<NotificationBean> notificationBeans, Long campaignId) {
+
+        Campaign campaign = campaignsRepository.findById(campaignId).orElseThrow(() -> new RuntimeException(campaignId + " not found"));
+
+
         return notificationBeans.stream().map(notificationBean -> {
             notificationBean.setCampaignId(campaignId.longValue());
             Notification notification = Notification.builder()
                     .title(notificationBean.getNotificationTitle())
                     .message(notificationBean.getNotificationMessage())
-                    .campaignId(notificationBean.getCampaignId())
+                    .campaign(campaign)
                     .platform("email")
                     .build();
+
             System.out.println(notification);
             return notificationsRepository.save(notification);
         }).collect(Collectors.toList());
     }
 
     public void deleteNotificationsByCampaignId(Long campaignId) {
-        notificationsRepository.deleteAllByCampaignId(campaignId);
+        Campaign campaign = campaignsRepository.findById(campaignId).orElseThrow(() -> new RuntimeException(campaignId + " Not found"));
+        notificationsRepository.deleteAllByCampaign(campaign);
     }
 
     public List<Notification> getNotificationsByCampaignId(Long campaignId) {
-        return notificationsRepository.getNotificationsByCampaignId(campaignId);
+        Campaign campaign = campaignsRepository.findById(campaignId).orElseThrow(() -> new RuntimeException(campaignId + " Not found"));
+        return notificationsRepository.getNotificationsByCampaign(campaign);
     }
 }
