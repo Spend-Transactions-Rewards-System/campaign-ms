@@ -16,4 +16,10 @@ public class NotificationLogs {
     private String errorMessage;
 
     private String message;
+
+    @ManyToOne
+    private Customer customer;
+
+    @ManyToOne
+    private Notification notification;
 }
