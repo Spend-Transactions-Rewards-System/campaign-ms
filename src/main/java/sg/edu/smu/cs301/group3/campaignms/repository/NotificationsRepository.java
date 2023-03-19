@@ -1,11 +1,14 @@
 package sg.edu.smu.cs301.group3.campaignms.repository;
 
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+import sg.edu.smu.cs301.group3.campaignms.model.Campaign;
 import sg.edu.smu.cs301.group3.campaignms.model.Notification;
 
 import java.util.List;
 
-public interface NotificationsRepository extends CrudRepository<Notification, Long> {
-    List<Notification> getNotificationsByCampaignId(int campaignId);
-    void deleteAllByCampaignId(int campaignId);
+@Repository
+public interface NotificationsRepository extends JpaRepository<Notification, Long> {
+    List<Notification> getNotificationsByCampaign(Campaign campaign);
+    void deleteAllByCampaign(Campaign campaign);
 }

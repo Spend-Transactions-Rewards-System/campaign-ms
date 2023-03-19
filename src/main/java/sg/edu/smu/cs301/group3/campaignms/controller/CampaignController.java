@@ -36,7 +36,7 @@ public class CampaignController {
 
     @GetMapping("/campaign/{id}")
     public ResponseEntity<List<CampaignBean>> getCampaignByCardId(@PathVariable String id) {
-        List<CampaignBean> campaignBeans = campaignService.getCampaignByCardId(Integer.parseInt(id))
+        List<CampaignBean> campaignBeans = campaignService.getCampaignByCardId(Long.parseLong(id))
                 .stream().map(campaign -> CampaignBean.fromCampaignModel(campaign, notificationService
                         .getNotificationsByCampaignId(campaign.getCampaignId()))).toList();
         return ResponseEntity.ok(campaignBeans);
@@ -53,7 +53,7 @@ public class CampaignController {
     @PutMapping("/campaign/{id}")
     public ResponseEntity<String> editCampaign(@PathVariable String id, @RequestBody CampaignBean campaignBean) {
         try {
-            Campaign editCampaign = campaignService.editCampaign(campaignBean, Integer.parseInt(id));
+            Campaign editCampaign = campaignService.editCampaign(campaignBean, Long.parseLong(id));
             return ResponseEntity.ok(Map.of("campaign", editCampaign).toString());
         } catch (Exception e) {
             e.printStackTrace();
@@ -63,8 +63,8 @@ public class CampaignController {
 
     @DeleteMapping("/campaign/{id}")
     public ResponseEntity<String> deleteCampaign(@PathVariable String id) {
-        Campaign deletedCampaign = campaignService.deleteCampaign(Integer.parseInt(id));
-        notificationService.deleteNotificationsByCampaignId(Integer.parseInt(id));
+        Campaign deletedCampaign = campaignService.deleteCampaign(Long.parseLong(id));
+        notificationService.deleteNotificationsByCampaignId(Long.parseLong(id));
         return ResponseEntity.ok(Map.of("campaign", deletedCampaign).toString());
     }
 }
