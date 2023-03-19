@@ -2,6 +2,7 @@ package sg.edu.smu.cs301.group3.campaignms.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import sg.edu.smu.cs301.group3.campaignms.constants.Status;
 
 @Data
 @Table(name = "notificationLogs")
@@ -11,7 +12,7 @@ public class NotificationLogs {
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Long notificationLogsId;
 
-    private String status;
+    private Status status;
 
     private String errorMessage;
 
