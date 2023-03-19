@@ -11,6 +11,7 @@ public class NotificationLogs {
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Long notificationLogsId;
 
+    @Enumerated(EnumType.STRING)
     private Status status;
 
     private String errorMessage;
