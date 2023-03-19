@@ -25,15 +25,6 @@ public class NotificationLogsService {
         return notificationLogsRepository.findAll();
     }
 
-    public NotificationLogs getNotificationLogsById(Long id){
-        Optional<NotificationLogs> notificationLogs = notificationLogsRepository.findById(id);
-        if(!notificationLogs.isPresent()){
-            return null;
-        }
-
-        return notificationLogs.get();
-    }
-
     public NotificationLogs createNotificationLogs(NotificationLogs notificationLogs){
         return notificationLogsRepository.save(notificationLogs);
     }
