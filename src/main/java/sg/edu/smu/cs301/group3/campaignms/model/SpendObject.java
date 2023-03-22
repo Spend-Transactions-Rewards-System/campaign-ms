@@ -8,7 +8,6 @@ import java.util.Date;
 
 @Data
 @Builder
-@AllArgsConstructor
 public class SpendObject {
     private Long id;
 
