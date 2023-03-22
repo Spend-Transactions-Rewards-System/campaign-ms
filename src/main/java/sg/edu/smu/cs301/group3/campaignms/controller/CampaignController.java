@@ -1,11 +1,7 @@
 package sg.edu.smu.cs301.group3.campaignms.controller;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.cloud.aws.messaging.core.QueueMessagingTemplate;
 import org.springframework.http.ResponseEntity;
-import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.web.bind.annotation.*;
 import sg.edu.smu.cs301.group3.campaignms.beans.CampaignBean;
 import sg.edu.smu.cs301.group3.campaignms.model.Campaign;
@@ -21,17 +17,6 @@ public class CampaignController {
 
     private final CampaignService campaignService;
     private final NotificationService notificationService;
-
-    @Autowired
-    private QueueMessagingTemplate queueMessagingTemplate;
-
-    @Value("${aws.campaign.to.card.queue.url}")
-    private String endpoint;
-
-    @GetMapping("/send/{message}")
-    public void sendMessage(@PathVariable String message){
-        queueMessagingTemplate.send(endpoint, MessageBuilder.withPayload(message).build());
-    }
 
     @GetMapping("/")
     public ResponseEntity<String> checkPulse() {
