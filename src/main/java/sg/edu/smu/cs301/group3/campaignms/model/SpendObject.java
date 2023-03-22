@@ -9,13 +9,10 @@ import java.util.Date;
 @Data
 @Builder
 @AllArgsConstructor
-public class Reward {
-
-    private String tenant;
+public class SpendObject {
+    private Long id;
 
     private Long transaction_id;
-
-    private Date transaction_date;
 
     private Long card_id;
 
@@ -27,7 +24,8 @@ public class Reward {
 
     private Long amount;
 
-    private Long rewardAmount;
+    private Date transaction_date;
 
-    private String remarks;
+    private CardType cardType;
+
 }
