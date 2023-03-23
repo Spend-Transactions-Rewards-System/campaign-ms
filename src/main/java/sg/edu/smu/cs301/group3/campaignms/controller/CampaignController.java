@@ -17,15 +17,11 @@ public class CampaignController {
 
     private final CampaignService campaignService;
     private final NotificationService notificationService;
-    @GetMapping("/")
-    public ResponseEntity<String> checkPulse() {
-        return ResponseEntity.ok("Campaign-Rewards ms at your service");
-    }
     @PostMapping("/campaign")
     public ResponseEntity<String> addCampaign(@RequestBody CampaignBean campaignBean) {
         try {
             Campaign savedCampaign = campaignService.addCampaign(campaignBean);
-            notificationService.addNotificationsInBulk(campaignBean.getNotificationBeanList(),
+            notificationService.addNotificationsInBulk(campaignBean.getCampaignNotificationBeanList(),
                     savedCampaign.getCampaignId());
             return ResponseEntity.ok("success");
         } catch (Exception e) {
