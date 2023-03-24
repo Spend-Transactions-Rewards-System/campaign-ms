@@ -17,6 +17,7 @@ public class CampaignController {
 
     private final CampaignService campaignService;
     private final NotificationService notificationService;
+
     @GetMapping("/")
     public ResponseEntity<String> checkPulse() {
         return ResponseEntity.ok("Campaign-Rewards ms at your service");
