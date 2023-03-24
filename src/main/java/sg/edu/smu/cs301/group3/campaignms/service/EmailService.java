@@ -21,8 +21,7 @@ public class EmailService {
     @Autowired
     private AmazonSimpleEmailService amazonSimpleEmailService;
 
-    public SdkHttpMetadata send(Campaign campaign, String userEmail) {
-        Notification notification = notificationsRepository.getNotificationsByCampaign(campaign).get(0);
+    public SdkHttpMetadata send(Notification notification, String userEmail) {
 
         SendEmailRequest request = new SendEmailRequest()
                 .withMessage(new Message()

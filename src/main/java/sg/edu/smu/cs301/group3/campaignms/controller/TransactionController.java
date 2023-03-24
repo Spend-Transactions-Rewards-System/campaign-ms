@@ -9,8 +9,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import sg.edu.smu.cs301.group3.campaignms.beans.NotificationBean;
 import sg.edu.smu.cs301.group3.campaignms.model.Campaign;
+import sg.edu.smu.cs301.group3.campaignms.model.Notification;
 import sg.edu.smu.cs301.group3.campaignms.service.CampaignService;
 import sg.edu.smu.cs301.group3.campaignms.service.EmailService;
+import sg.edu.smu.cs301.group3.campaignms.service.NotificationService;
 
 @RestController
 @RequestMapping("/transaction")
@@ -21,11 +23,15 @@ public class TransactionController {
     @Autowired
     EmailService emailService;
 
+    @Autowired
+    NotificationService notificationService;
+
     @PostMapping("/notification")
     public ResponseEntity<String> notifyUserOfTransaction(@RequestBody NotificationBean notificationBean) {
         try {
-            Campaign campaign = campaignService.getCampaignByCampaignId(notificationBean.getCampaignId());
-            SdkHttpMetadata resp = emailService.send(campaign, notificationBean.getUserEmail());
+            Notification notification = notificationService
+                    .getNotificationsByCampaignId(notificationBean.getCampaignId()).get(0);
+            SdkHttpMetadata resp = emailService.send(notification, notificationBean.getUserEmail());
             return ResponseEntity.ok(resp.toString());
         } catch (Exception e) {
             e.printStackTrace();
