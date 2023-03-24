@@ -20,7 +20,7 @@ public class SpendBean {
 
     private String currency;
 
-    private Long amount;
+    private double amount;
 
     private Date transaction_date;
 

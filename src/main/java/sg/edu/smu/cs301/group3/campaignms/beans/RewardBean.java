@@ -22,9 +22,9 @@ public class RewardBean {
 
     private String currency;
 
-    private Long amount;
+    private double amount;
 
-    private Long rewardAmount;
+    private double rewardAmount;
 
     private String remarks;
 }
