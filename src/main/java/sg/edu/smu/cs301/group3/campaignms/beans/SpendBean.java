@@ -10,6 +10,8 @@ import java.util.Date;
 public class SpendBean {
     private Long id;
 
+    private String tenant;
+    
     private Long transaction_id;
 
     private Long card_id;
