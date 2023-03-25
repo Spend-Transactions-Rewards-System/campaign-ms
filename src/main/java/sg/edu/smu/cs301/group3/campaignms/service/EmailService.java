@@ -5,18 +5,14 @@ import com.amazonaws.services.simpleemail.AmazonSimpleEmailService;
 import com.amazonaws.services.simpleemail.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import sg.edu.smu.cs301.group3.campaignms.model.Campaign;
 import sg.edu.smu.cs301.group3.campaignms.model.Notification;
-import sg.edu.smu.cs301.group3.campaignms.repository.NotificationsRepository;
 
 
 @Service
 public class EmailService {
-    @Autowired
-    private NotificationsRepository notificationsRepository;
 
     private final static String FROM_EMAIL = "g1t3cs@gmail.com";
-    private final static String FROM_NAME = "G1T3 tEAM";
+    private final static String FROM_NAME = "SCIS G1T3";
 
     @Autowired
     private AmazonSimpleEmailService amazonSimpleEmailService;
