@@ -6,6 +6,7 @@ import com.amazonaws.services.secretsmanager.AWSSecretsManagerClientBuilder;
 import com.amazonaws.services.secretsmanager.model.GetSecretValueRequest;
 import com.amazonaws.services.secretsmanager.model.GetSecretValueResult;
 import com.google.gson.Gson;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -18,12 +19,15 @@ public class ApplicationConfig {
 
     Gson gson = new Gson();
 
+    @Value("${spring.datasource.url}")
+    private String dbUrl;
+
     @Bean
     public DataSource dataSource() {
         AWSSecretBean secrets = getDatabaseCreds();
         return DataSourceBuilder
                 .create()
-                .url("jdbc:" + secrets.getEngine() + "://" + secrets.getHost() + ":" + secrets.getPort() + "/campaign_db")
+                .url(dbUrl)
                 .username(secrets.getUsername())
                 .password(secrets.getPassword())
                 .build();
