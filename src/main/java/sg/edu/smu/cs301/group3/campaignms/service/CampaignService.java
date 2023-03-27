@@ -34,6 +34,10 @@ public class CampaignService {
         return campaignsRepository.getCampaignsByCardType(cardType);
     }
 
+    public Campaign getCampaignByCampaignId(Long id) {
+        return campaignsRepository.getCampaignByCampaignId(id);
+    }
+
     public Campaign addCampaign(CampaignBean campaignBean) throws Exception {
 
         CardType cardType = cardTypeRepository.findById(campaignBean.getCardProgramId())
