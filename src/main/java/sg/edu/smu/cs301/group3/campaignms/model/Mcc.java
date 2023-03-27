@@ -16,7 +16,7 @@ import lombok.NoArgsConstructor;
 @Builder
 public class Mcc {
     @Id
-    private Long mcc;
+    private Integer mcc;
     private String description;
     private String group;
     private boolean isForeign;
