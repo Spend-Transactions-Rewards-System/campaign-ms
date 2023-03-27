@@ -19,5 +19,4 @@ public class Mcc {
     private Integer mcc;
     private String description;
     private String group;
-    private boolean isForeign;
 }
