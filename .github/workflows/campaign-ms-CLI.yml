@@ -47,6 +47,12 @@ jobs:
       ECS_CLUSTER: ${{ vars.ECS_CLUSTER }}                 # set this to your Amazon ECS cluster name
       ECS_TASK_DEFINITION: ${{ vars.ECS_TASK_DEFINITION }} # set this to the path to your Amazon ECS task definition
       CONTAINER_NAME: ${{ vars.CONTAINER_NAME }}           # set this to the name of the container in the
+      JPA_DDL_CONFIG: ${{ vars.JPA_DDL_CONFIG }}
+      DB_MYSQL_URL: ${{ vars.DB_MYSQL_URL }}
+      DB_MYSQL_USERNAME: ${{ secrets.DB_MYSQL_USERNAME }}
+      DB_MYSQL_PASSWORD: ${{ secrets.DB_MYSQL_PASSWORD }}
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
     steps:
       - name: Use variables
@@ -86,18 +92,18 @@ jobs:
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
           echo "image=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG" >> $GITHUB_OUTPUT
 
-#      - name: Fill in the new image ID in the Amazon ECS task definition
-#        id: task-def
-#        uses: aws-actions/amazon-ecs-render-task-definition@v1
-#        with:
-#          task-definition: service-ecs-task.json
-#          container-name: service-ecs-container
-#          image: ${{ steps.build-image.outputs.image }}
-#
-#      - name: Deploy Amazon ECS task definition
-#        uses: aws-actions/amazon-ecs-deploy-task-definition@v1
-#        with:
-#          task-definition: ${{ steps.task-def.outputs.task-definition }}
-#          service: service-ecs
-#          cluster: service-ecs-cluster
-#          wait-for-service-stability: true
+      - name: Fill in the new image ID in the Amazon ECS task definition
+        id: task-def
+        uses: aws-actions/amazon-ecs-render-task-definition@v1
+        with:
+          task-definition: campaign-rewards-ms-task.json
+          container-name: campaign-rewards-ms-container
+          image: ${{ steps.build-image.outputs.image }}
+
+      - name: Deploy Amazon ECS task definition
+        uses: aws-actions/amazon-ecs-deploy-task-definition@v1
+        with:
+          task-definition: ${{ steps.task-def.outputs.task-definition }}
+          service: service-campaign-rewards-ms
+          cluster: ITSA-ecs-cluster
+          wait-for-service-stability: true

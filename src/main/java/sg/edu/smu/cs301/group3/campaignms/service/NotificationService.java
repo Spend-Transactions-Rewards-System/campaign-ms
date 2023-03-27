@@ -2,7 +2,7 @@ package sg.edu.smu.cs301.group3.campaignms.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import sg.edu.smu.cs301.group3.campaignms.beans.NotificationBean;
+import sg.edu.smu.cs301.group3.campaignms.beans.CampaignNotificationBean;
 import sg.edu.smu.cs301.group3.campaignms.model.Campaign;
 import sg.edu.smu.cs301.group3.campaignms.model.Notification;
 import sg.edu.smu.cs301.group3.campaignms.repository.CampaignsRepository;
@@ -17,16 +17,15 @@ public class NotificationService {
     private final NotificationsRepository notificationsRepository;
     private final CampaignsRepository campaignsRepository;
 
-    public List<Notification> addNotificationsInBulk(List<NotificationBean> notificationBeans, Long campaignId) {
+    public List<Notification> addNotificationsInBulk(List<CampaignNotificationBean> campaignNotificationBeans, Long campaignId) {
 
         Campaign campaign = campaignsRepository.findById(campaignId).orElseThrow(() -> new RuntimeException(campaignId + " not found"));
 
-
-        return notificationBeans.stream().map(notificationBean -> {
-            notificationBean.setCampaignId(campaignId.longValue());
+        return campaignNotificationBeans.stream().map(campaignNotificationBean -> {
+            campaignNotificationBean.setCampaignId(campaignId.longValue());
             Notification notification = Notification.builder()
-                    .title(notificationBean.getNotificationTitle())
-                    .message(notificationBean.getNotificationMessage())
+                    .title(campaignNotificationBean.getNotificationTitle())
+                    .message(campaignNotificationBean.getNotificationMessage())
                     .campaign(campaign)
                     .platform("email")
                     .build();

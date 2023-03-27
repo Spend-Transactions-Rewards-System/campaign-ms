@@ -15,7 +15,7 @@ public class MccExclusion {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String mcc;
+    private Long mcc;
     private String tenant;
 
     @ManyToOne(cascade = {CascadeType.REFRESH})
