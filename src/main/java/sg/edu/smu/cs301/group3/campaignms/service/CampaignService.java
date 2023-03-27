@@ -80,6 +80,10 @@ public class CampaignService {
         return campaignsRepository.deleteByCampaignId(campaignId);
     }
 
+    public List<CardType> getAllCardType() {
+        return cardTypeRepository.findAll();
+    }
+
     private boolean withinCampaignPeriod(Campaign campaign) {
         return campaign.getStartDate().before(new Date(System.currentTimeMillis())) && campaign.getEndDate().after(new Date(System.currentTimeMillis()));
     }

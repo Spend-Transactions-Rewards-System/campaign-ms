@@ -1,18 +1,19 @@
 package sg.edu.smu.cs301.group3.campaignms.controller;
 
+import com.amazonaws.Response;
 import com.amazonaws.http.SdkHttpMetadata;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import sg.edu.smu.cs301.group3.campaignms.beans.NotificationBean;
 import sg.edu.smu.cs301.group3.campaignms.model.Campaign;
+import sg.edu.smu.cs301.group3.campaignms.model.CardType;
 import sg.edu.smu.cs301.group3.campaignms.model.Notification;
 import sg.edu.smu.cs301.group3.campaignms.service.CampaignService;
 import sg.edu.smu.cs301.group3.campaignms.service.EmailService;
 import sg.edu.smu.cs301.group3.campaignms.service.NotificationService;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/transaction")
@@ -22,7 +23,6 @@ public class TransactionController {
     CampaignService campaignService;
     @Autowired
     EmailService emailService;
-
     @Autowired
     NotificationService notificationService;
 
@@ -37,5 +37,10 @@ public class TransactionController {
             e.printStackTrace();
             return ResponseEntity.ok("error");
         }
+    }
+
+    @GetMapping("/cardprogram")
+    public ResponseEntity<List<CardType>> getAllCardProgram() {
+        return ResponseEntity.ok(campaignService.getAllCardType());
     }
 }
