@@ -14,7 +14,7 @@ public class AWSConfig {
     private String secretKey;
     @Value("${spring.cloud.aws.credentials.access-key}")
     private String accessKey;
-    @Value("${aws_region}")
+    @Value("${spring.cloud.aws.sqs.region}")
     private String awsRegion;
 
     public AWSStaticCredentialsProvider getAWSCredentials() {
