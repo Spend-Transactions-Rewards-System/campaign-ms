@@ -58,7 +58,6 @@
 			<groupId>io.awspring.cloud</groupId>
 			<artifactId>spring-cloud-aws-starter-sqs</artifactId>
 			<version>3.0.0-RC1</version>
->>>>>>>>> Temporary merge branch 2
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
