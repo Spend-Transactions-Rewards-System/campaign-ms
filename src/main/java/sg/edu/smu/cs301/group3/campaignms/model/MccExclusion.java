@@ -1,9 +1,6 @@
 package sg.edu.smu.cs301.group3.campaignms.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -20,5 +17,7 @@ public class MccExclusion {
     private Long id;
     private String mcc;
     private String tenant;
-    private Long cardTypeId;
+
+    @ManyToOne(cascade = {CascadeType.REFRESH})
+    private CardType cardType;
 }
