@@ -16,10 +16,8 @@ import lombok.NoArgsConstructor;
 @Builder
 public class Mcc {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
-    private String mcc;
+    private Long mcc;
     private String description;
-    private String category;
+    private String group;
     private boolean isForeign;
 }
