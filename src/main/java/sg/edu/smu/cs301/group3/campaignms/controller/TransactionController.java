@@ -16,7 +16,7 @@ import sg.edu.smu.cs301.group3.campaignms.service.NotificationService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/transaction")
+@RequestMapping("/campaign")
 public class TransactionController {
 
     @Autowired
