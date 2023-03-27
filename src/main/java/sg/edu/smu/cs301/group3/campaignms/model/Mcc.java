@@ -16,5 +16,5 @@ public class Mcc {
     @Id
     private int mcc;
     private String description;
-    private String group;
+    private String mccGroup;
 }
