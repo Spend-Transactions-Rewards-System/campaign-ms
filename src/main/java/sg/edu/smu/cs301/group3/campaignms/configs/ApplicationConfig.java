@@ -14,7 +14,7 @@ import sg.edu.smu.cs301.group3.campaignms.beans.AWSSecretBean;
 
 import javax.sql.DataSource;
 
-@Configuration
+//@Configuration
 public class ApplicationConfig {
 
     Gson gson = new Gson();
