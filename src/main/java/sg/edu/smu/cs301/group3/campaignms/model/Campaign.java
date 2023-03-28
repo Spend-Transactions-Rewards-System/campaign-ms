@@ -25,7 +25,7 @@ public class Campaign {
     private Timestamp endDate;
     private String mcc;
     private double minDollarSpent;
-    private int rewardRate;
+    private double rewardRate;
 
     @ManyToOne
     @JoinColumn(name = "cardType_id", referencedColumnName = "id")
