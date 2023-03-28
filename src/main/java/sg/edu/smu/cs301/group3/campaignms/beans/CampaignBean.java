@@ -23,7 +23,7 @@ public class CampaignBean {
     @JsonProperty("min_dollar_spent")
     private double minDollarSpent;
     @JsonProperty("points_per_dollar")
-    private int pointsPerDollar;
+    private double pointsPerDollar;
     @JsonProperty("card_program_id")
     private Long cardProgramId;
     @JsonProperty("notifications_list")
