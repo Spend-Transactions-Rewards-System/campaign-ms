@@ -34,7 +34,7 @@ public class CampaignBean {
                 .title(campaign.getTitle())
                 .startDate(campaign.getStartDate().toString())
                 .endDate(campaign.getEndDate().toString())
-                .mcc(campaign.getMcc())
+                .mcc(campaign.getMerchant())
                 .minDollarSpent(campaign.getMinDollarSpent())
                 .pointsPerDollar(campaign.getRewardRate())
                 .cardProgramId(campaign.getCardType().getId())
