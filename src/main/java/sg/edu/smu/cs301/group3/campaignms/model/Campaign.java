@@ -27,7 +27,8 @@ public class Campaign {
     private double minDollarSpent;
     private int rewardRate;
 
-    @OneToOne(cascade = {CascadeType.REFRESH})
+    @ManyToOne
+    @JoinColumn(name = "cardType_id", referencedColumnName = "id")
     private CardType cardType;
     private boolean isActive;
     private String customCategory;
