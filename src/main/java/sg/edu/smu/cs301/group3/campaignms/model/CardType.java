@@ -1,13 +1,13 @@
 package sg.edu.smu.cs301.group3.campaignms.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 @Entity
 @NoArgsConstructor
@@ -21,4 +21,8 @@ public class CardType {
     private Long id;
     private String name;
     private String tenant;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "cardType", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Campaign> campaignList;
 }
