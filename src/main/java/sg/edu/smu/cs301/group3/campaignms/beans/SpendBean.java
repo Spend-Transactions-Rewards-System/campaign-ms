@@ -27,5 +27,5 @@ public class SpendBean {
 
     private Timestamp transaction_date;
 
-    private CardType cardType;
+    private String cardType;
 }

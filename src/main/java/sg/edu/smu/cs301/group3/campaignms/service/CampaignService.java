@@ -3,6 +3,7 @@ package sg.edu.smu.cs301.group3.campaignms.service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import sg.edu.smu.cs301.group3.campaignms.beans.CampaignBean;
+import sg.edu.smu.cs301.group3.campaignms.beans.SpendBean;
 import sg.edu.smu.cs301.group3.campaignms.model.Campaign;
 import sg.edu.smu.cs301.group3.campaignms.model.CardType;
 import sg.edu.smu.cs301.group3.campaignms.repository.CampaignsRepository;
@@ -50,7 +51,7 @@ public class CampaignService {
                 .title(campaignBean.getTitle())
                 .startDate(new Timestamp(startDate.getTime()))
                 .endDate(new Timestamp(endDate.getTime()))
-                .mcc(campaignBean.getMcc())
+                .merchant(campaignBean.getMcc())
                 .minDollarSpent(campaignBean.getMinDollarSpent())
                 .rewardRate(campaignBean.getPointsPerDollar())
                 .cardType(cardType)
@@ -69,7 +70,7 @@ public class CampaignService {
         retrievedCampaign.setTitle(campaignBean.getTitle());
         retrievedCampaign.setStartDate(new Timestamp(startDate.getTime()));
         retrievedCampaign.setEndDate(new Timestamp(endDate.getTime()));
-        retrievedCampaign.setMcc(campaignBean.getMcc());
+        retrievedCampaign.setMerchant(campaignBean.getMcc());
         retrievedCampaign.setMinDollarSpent(campaignBean.getMinDollarSpent());
         retrievedCampaign.setRewardRate(campaignBean.getPointsPerDollar());
         retrievedCampaign.setActive(withinCampaignPeriod(retrievedCampaign));
@@ -83,4 +84,16 @@ public class CampaignService {
     private boolean withinCampaignPeriod(Campaign campaign) {
         return campaign.getStartDate().before(new Date(System.currentTimeMillis())) && campaign.getEndDate().after(new Date(System.currentTimeMillis()));
     }
+
+    public boolean isValid(Campaign campaign, Timestamp current){
+        Timestamp startDate = campaign.getStartDate();
+        Timestamp endDate = campaign.getEndDate();
+        return startDate.before(current) && endDate.after(current);
+    }
+
+    public double baseReward(Campaign campaign, SpendBean spendBean){
+        return campaign.getRewardRate() * spendBean.getAmount();
+    }
+
+
 }
