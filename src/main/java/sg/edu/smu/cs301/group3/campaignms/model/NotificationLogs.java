@@ -8,7 +8,7 @@ import sg.edu.smu.cs301.group3.campaignms.constants.Status;
 @Entity
 public class NotificationLogs {
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long notificationLogsId;
 
     @Enumerated(EnumType.STRING)

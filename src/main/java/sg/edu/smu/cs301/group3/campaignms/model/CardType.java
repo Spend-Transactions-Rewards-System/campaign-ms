@@ -17,7 +17,7 @@ import lombok.NoArgsConstructor;
 public class CardType {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
     private String tenant;

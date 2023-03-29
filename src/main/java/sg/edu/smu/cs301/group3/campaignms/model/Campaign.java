@@ -18,7 +18,7 @@ import java.sql.Timestamp;
 public class Campaign {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long campaignId;
     private String title;
     private Timestamp startDate;
