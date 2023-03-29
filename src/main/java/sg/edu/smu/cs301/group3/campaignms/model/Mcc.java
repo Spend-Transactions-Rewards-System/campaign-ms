@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 @Builder
 public class Mcc {
     @Id
-    private int mcc;
+    private Integer mcc;
     private String description;
     private String mccGroup;
 }
