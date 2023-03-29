@@ -15,13 +15,15 @@ import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.Locale;
 
+import static sg.edu.smu.cs301.group3.campaignms.constants.DateHelper.DATE_FORMAT;
+
 @Service
 @RequiredArgsConstructor
 public class CampaignService {
     private final CampaignsRepository campaignsRepository;
     private final CardTypeRepository cardTypeRepository;
 
-    private final SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);
+    private final SimpleDateFormat formatter = new SimpleDateFormat(DATE_FORMAT, Locale.ENGLISH);
 
     public List<Campaign> getAllCampaign() {
         return campaignsRepository.findAll();
@@ -95,7 +97,7 @@ public class CampaignService {
         return startDate.before(current) && endDate.after(current);
     }
 
-    public double baseReward(Campaign campaign, SpendBean spendBean){
+    public double computeReward(Campaign campaign, SpendBean spendBean){
         return campaign.getRewardRate() * spendBean.getAmount();
     }
 

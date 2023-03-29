@@ -1,6 +1,6 @@
 package sg.edu.smu.cs301.group3.campaignms.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import sg.edu.smu.cs301.group3.campaignms.beans.RewardBean;
 import sg.edu.smu.cs301.group3.campaignms.beans.SpendBean;
@@ -10,29 +10,24 @@ import sg.edu.smu.cs301.group3.campaignms.model.CustomCategory;
 import sg.edu.smu.cs301.group3.campaignms.model.Mcc;
 import sg.edu.smu.cs301.group3.campaignms.repository.CardTypeRepository;
 import sg.edu.smu.cs301.group3.campaignms.repository.MccExclusionRepository;
-import sg.edu.smu.cs301.group3.campaignms.repository.MccRepository;
 
-import java.sql.Timestamp;
 import java.util.*;
 
-import static sg.edu.smu.cs301.group3.campaignms.constants.Remarks.BASE;
-import static sg.edu.smu.cs301.group3.campaignms.constants.Remarks.NOREWARD;
+import static sg.edu.smu.cs301.group3.campaignms.constants.Remarks.*;
 
+@RequiredArgsConstructor
 @Service
 public class SpendService {
 
-    private CardTypeRepository cardTypeRepository;
+    private final CardTypeRepository cardTypeRepository;
 
-    @Autowired
-    private MccExclusionService mccExclusionService;
+    private final MccExclusionService mccExclusionService;
 
-    @Autowired
-    private CampaignService campaignService;
+    private final CampaignService campaignService;
 
-    @Autowired
-    private CustomCategoryService customCategoryService;
+    private final CustomCategoryService customCategoryService;
 
-    private MccExclusionRepository mccExclusionRepository;
+    private final MccExclusionRepository mccExclusionRepository;
 
     public List<RewardBean> convertToReward(SpendBean spendBean){
         List<RewardBean> list = new ArrayList<>();
@@ -46,77 +41,72 @@ public class SpendService {
         List<Campaign> categoryList = new ArrayList<>();
         List<Campaign> campaignList = new ArrayList<>();
         List<Campaign> campaigns = cardType.get().getCampaignList();
-        for(Campaign campaign : campaigns){
-            if(campaign.getTitle().equalsIgnoreCase("base")){
-                baseList.add(campaign);
-            } else if(campaign.getTitle().equalsIgnoreCase("category")){
-                categoryList.add(campaign);
-            } else {
-                campaignList.add(campaign);
+
+        buildCampaignBuckets(campaigns, baseList, categoryList, campaignList);
+
+        RewardBean rewardBean = null;
+
+        for (int i = 0 ; i< baseList.size(); i++) {
+
+            Campaign rule = baseList.get(i);
+
+            if(rule.isForeign()) {
+                rewardBean = processIsForeignReward(spendBean, rule);
+                if(rewardBean!= null) {
+                    list.add(rewardBean);
+                    break;
+                }
+            }
+
+            if(rule.getCustomCategoryName() != null || !rule.getCustomCategoryName().isEmpty()) {
+                rewardBean = processCustomCategory(spendBean, rule);
+                if(rewardBean!= null) {
+                    list.add(rewardBean);
+                    break;
+                }
+            }
+
+            if(rule.getMinDollarSpent() > 0.0) {
+                rewardBean = processMinimumSpendReward(spendBean, rule);
+                if(rewardBean!= null) {
+                    list.add(rewardBean);
+                    break;
+                }
+            }
+
+            if(i == baseList.size()) {
+                list.add(processBaseReward(spendBean, rule));
             }
         }
 
-        Collections.sort(baseList, new Comparator<Campaign>() {
-            @Override
-            public int compare(Campaign c1, Campaign c2) {
-                return (int) (c2.getRewardRate() - c1.getRewardRate());
-            }
-        });
-
-        double reward1 = 0.0;
-        boolean fulfilled = false;
-        String remarks = "";
-        for(Campaign campaign : baseList){
-            if(fulfilled){
-                break;
+        for (Campaign categoryRule: categoryList) {
+            if(categoryRule.getCustomCategoryName() != null ||
+                    !categoryRule.getCustomCategoryName().isEmpty() &&
+                        categoryRule.isForeign()) {
+                rewardBean = processCustomCategoryWithIsForeign(spendBean, categoryRule);
+                if(rewardBean!= null) {
+                    list.add(rewardBean);
+                    break;
+                }
             }
 
-            if(campaign.getCustomCategoryName() != null){
-                List<CustomCategory> customCategories = customCategoryService.getCustomCategory(campaign.getCustomCategoryName(), spendBean.getMerchant());
-                if(customCategories.isEmpty()){
-                    continue;
-                }
-                CustomCategory customCategory = customCategories.get(0);
-                for(Mcc obj : customCategory.getMccList()){
-                    if(spendBean.getMcc() == obj.getMcc()){
-                        reward1 = campaignService.baseReward(campaign, spendBean);
-                        remarks += BASE + campaign.getRewardRate();
-                        fulfilled = true;
-                    }
-                }
-            } else{
-                if(campaign.isForeign() && !spendBean.getCurrency().equalsIgnoreCase("sgd") || !mccExclusionService.isExcluded(spendBean) ){
-                    reward1 = campaignService.baseReward(campaign, spendBean);
-                    remarks += BASE + campaign.getRewardRate();
+            if(categoryRule.getCustomCategoryName() != null ||
+                    !categoryRule.getCustomCategoryName().isEmpty()) {
+                rewardBean = processCustomCategoryWithIsForeign(spendBean, categoryRule);
+                if(rewardBean!= null) {
+                    list.add(rewardBean);
+                    break;
                 }
             }
         }
 
-        if(!fulfilled){
-            remarks += NOREWARD;
-        }
-        RewardBean rewardBean1 = createReward(spendBean, reward1, remarks);
-        list.add(rewardBean1);
-
-        reward1 = 0.0;
-        fulfilled = false;
-        remarks = "";
-        for(Campaign campaign : categoryList){
-            if(fulfilled){
-                break;
-            }
-            if(campaign.getCustomCategoryName() != null){
-                List<CustomCategory> customCategories = customCategoryService.getCustomCategory(campaign.getCustomCategoryName(), spendBean.getMerchant());
-                if(customCategories.isEmpty()){
-                    continue;
-                }
-                CustomCategory customCategory = customCategories.get(0);
-                for(Mcc obj : customCategory.getMccList()){
-                    if(spendBean.getMcc() == obj.getMcc()){
-                        reward1 = campaignService.baseReward(campaign, spendBean);
-                        remarks += BASE + campaign.getRewardRate();
-                        fulfilled = true;
-                    }
+        for (Campaign campaignRule: campaignList) {
+            if(campaignRule.getCustomCategoryName() != null ||
+                    !campaignRule.getCustomCategoryName().isEmpty()) {
+                rewardBean = processCustomCategoryWithIsForeign(spendBean, campaignRule);
+                if(rewardBean!= null) {
+                    list.add(rewardBean);
+                    break;
                 }
             }
         }
@@ -132,4 +122,95 @@ public class SpendService {
                 .mcc(spendBean.getMcc()).remarks(remarks).build();
     }
 
+    private RewardBean processBaseReward(SpendBean spendBean, Campaign campaign) {
+        if(mccExclusionService.isExcluded(spendBean) ){
+            return createReward(spendBean, 0.0, NOREWARD);
+        } else {
+            return createReward(spendBean, campaignService.computeReward(campaign, spendBean),
+                    remarksFactory(campaign));
+        }
+    }
+
+    private RewardBean processIsForeignReward(SpendBean spendBean, Campaign campaign) {
+        if (!spendBean.getCurrency().equalsIgnoreCase("sgd")) {
+            return createReward(spendBean, campaignService.computeReward(campaign, spendBean),
+                    remarksFactory(campaign));
+        }
+
+        return null;
+    }
+
+    private RewardBean processCustomCategory(SpendBean spendBean, Campaign campaign) {
+
+        List<CustomCategory> customCategories = customCategoryService.getCustomCategory(campaign.getCustomCategoryName(), spendBean.getMerchant());
+
+        //Merchant is not part of the maintained customCategory
+        if(customCategories.isEmpty()){
+            return null;
+        }
+
+        //Given merchant is part of the custom category, only one merchant will be maintained for each custom category
+        CustomCategory customCategory = customCategories.get(0);
+
+        for(Mcc obj : customCategory.getMccList()){
+            if(spendBean.getMcc() == obj.getMcc()){
+                return createReward(spendBean, campaignService.computeReward(campaign, spendBean),
+                        remarksFactory(campaign));
+            }
+        }
+
+        //Merchant is part of the mainted customCategory but no matching mcc for the spend
+        return null;
+    }
+
+    private RewardBean processCustomCategoryWithIsForeign(SpendBean spendBean, Campaign campaign) {
+
+        RewardBean rewardBean = processIsForeignReward(spendBean, campaign);
+
+        //isNotForeign
+        if(rewardBean == null) {
+            return null;
+        }
+
+        return processCustomCategory(spendBean, campaign);
+    }
+
+    private RewardBean processMinimumSpendReward(SpendBean spendBean, Campaign campaign) {
+
+        if(spendBean.getAmount() >= campaign.getMinDollarSpent()) {
+            return createReward(spendBean, campaignService.computeReward(campaign, spendBean),
+                    remarksFactory(campaign));
+        }
+
+        return null;
+    }
+
+    private String remarksFactory(Campaign campaign) {
+        if(campaign.getTitle().equalsIgnoreCase("base")) {
+            return BASE + " " + campaign.getRewardRate();
+        } else if (campaign.getTitle().equalsIgnoreCase("category")) {
+            return CATEGORY + " " + campaign.getRewardRate();
+        } else {
+            return CAMPAIGN + " " + campaign.getRewardRate();
+        }
+    }
+
+    public void buildCampaignBuckets(List<Campaign> rawCampaignList, List<Campaign> baseList, List<Campaign> categoryList, List<Campaign> campaignList) {
+        for(Campaign campaign : rawCampaignList){
+            if(campaign.getTitle().equalsIgnoreCase("base")){
+                baseList.add(campaign);
+            } else if(campaign.getTitle().equalsIgnoreCase("category")){
+                categoryList.add(campaign);
+            } else {
+                campaignList.add(campaign);
+            }
+        }
+
+        Collections.sort(baseList, new Comparator<Campaign>() {
+            @Override
+            public int compare(Campaign c1, Campaign c2) {
+                return (int) (c2.getRewardRate() - c1.getRewardRate());
+            }
+        });
+    }
 }

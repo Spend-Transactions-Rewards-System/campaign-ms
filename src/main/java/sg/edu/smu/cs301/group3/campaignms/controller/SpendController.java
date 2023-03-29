@@ -29,9 +29,9 @@ public class SpendController {
         queueMessagingTemplate.send(campaignToCardQueueUrl, MessageBuilder.withPayload(reward).build());
     }
 
-//    @GetMapping("/convert")
-//    public void convertAndSend(@RequestBody SpendBean spendBean){
-//        List<RewardBean> reward = spendService.convertToReward(spendBean);
-//        sendMessage(reward);
-//    }
+    @GetMapping("/convert")
+    public void convertAndSend(@RequestBody SpendBean spendBean){
+        List<RewardBean> reward = spendService.convertToReward(spendBean);
+        sendMessage(reward);
+    }
 }
