@@ -9,8 +9,7 @@ import sg.edu.smu.cs301.group3.campaignms.model.CardType;
 import sg.edu.smu.cs301.group3.campaignms.repository.CampaignsRepository;
 import sg.edu.smu.cs301.group3.campaignms.repository.CardTypeRepository;
 
-import java.sql.Timestamp;
-import java.util.Date;
+import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.Locale;
@@ -46,13 +45,13 @@ public class CampaignService {
         CardType cardType = cardTypeRepository.findById(campaignBean.getCardProgramId())
                 .orElseThrow(() -> new RuntimeException(campaignBean.getCardProgramId() + " not found"));
 
-        Date startDate = formatter.parse(campaignBean.getStartDate());
-        Date endDate = formatter.parse(campaignBean.getEndDate());
+        Date startDate = (Date) formatter.parse(campaignBean.getStartDate());
+        Date endDate = (Date) formatter.parse(campaignBean.getEndDate());
         Campaign campaign = Campaign
                 .builder()
                 .title(campaignBean.getTitle())
-                .startDate(new Timestamp(startDate.getTime()))
-                .endDate(new Timestamp(endDate.getTime()))
+                .startDate(new Date(startDate.getTime()))
+                .endDate(new Date(endDate.getTime()))
                 .merchant(campaignBean.getMcc())
                 .minDollarSpent(campaignBean.getMinDollarSpent())
                 .rewardRate(campaignBean.getPointsPerDollar())
@@ -64,14 +63,14 @@ public class CampaignService {
 
     public Campaign editCampaign(CampaignBean campaignBean, Long campaignId) throws Exception {
         Campaign retrievedCampaign = campaignsRepository.getCampaignByCampaignId(campaignId);
-        Date startDate = formatter.parse(campaignBean.getStartDate());
-        Date endDate = formatter.parse(campaignBean.getEndDate());
+        Date startDate = (Date) formatter.parse(campaignBean.getStartDate());
+        Date endDate = (Date) formatter.parse(campaignBean.getEndDate());
         if (retrievedCampaign == null) {
             throw new Exception("Campaign not found");
         }
         retrievedCampaign.setTitle(campaignBean.getTitle());
-        retrievedCampaign.setStartDate(new Timestamp(startDate.getTime()));
-        retrievedCampaign.setEndDate(new Timestamp(endDate.getTime()));
+        retrievedCampaign.setStartDate(new Date(startDate.getTime()));
+        retrievedCampaign.setEndDate(new Date(endDate.getTime()));
         retrievedCampaign.setMerchant(campaignBean.getMcc());
         retrievedCampaign.setMinDollarSpent(campaignBean.getMinDollarSpent());
         retrievedCampaign.setRewardRate(campaignBean.getPointsPerDollar());
@@ -91,11 +90,6 @@ public class CampaignService {
         return campaign.getStartDate().before(new Date(System.currentTimeMillis())) && campaign.getEndDate().after(new Date(System.currentTimeMillis()));
     }
 
-    public boolean isValid(Campaign campaign, Timestamp current){
-        Timestamp startDate = campaign.getStartDate();
-        Timestamp endDate = campaign.getEndDate();
-        return startDate.before(current) && endDate.after(current);
-    }
 
     public double computeReward(Campaign campaign, SpendBean spendBean){
 
