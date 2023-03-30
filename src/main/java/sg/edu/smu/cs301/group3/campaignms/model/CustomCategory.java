@@ -24,7 +24,9 @@ public class CustomCategory {
 
     private String name;
 
-    private int mcc;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name="mcc", nullable=false)
+    private Mcc mcc;
 
     private String merchant;
 
