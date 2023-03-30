@@ -1,1074 +1,359 @@
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (1,'hotels','Holiday Inns');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (2,'hotels','Best Western');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (3,'hotels','Sheraton');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (4,'hotels','Hilton');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (5,'hotels','Trusthouse Forte');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (6,'hotels','Golden Tulip');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (7,'hotels','Friendship Inns International');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (8,'hotels','Quality International');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (9,'hotels','Marriott');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (10,'hotels','Days Inns Of America');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (11,'hotels','Arabella Hotels');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (12,'hotels','Intercontinental');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (13,'hotels','Westin Hotels');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (14,'hotels','Amerisuites');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (15,'hotels','Rodeway Inns International');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (16,'hotels','La Quinta Motor Inns');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (17,'hotels','Americana Hotels Corporation');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (18,'hotels','Sol Hotels');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (19,'hotels','PLM/ETAP International');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (20,'hotels','Meridien');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (21,'hotels','Crest Hotels');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (22,'hotels','Tokyo Group');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (23,'hotels','Peninsula Hotels');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (24,'hotels','Welcomgroup');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (25,'hotels','Dunfey Hotels');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (26,'hotels','Prince Hotels');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (27,'hotels','Downtowner Passport');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (28,'hotels','Thunderbird/Red Lion');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (29,'hotels','CP (Canadian Pacific)');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (30,'hotels','Renaissance Hotels');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (31,'hotels','Kauai Coconut Beach Resort');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (32,'hotels','Royal Kona Resort');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (33,'hotels','Park Inn by Radisson');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (34,'hotels','Southern Pacific Hotel');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (35,'hotels','Hilton International');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (36,'hotels','AMFAC Hotels');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (37,'hotels','Ana Hotels');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (38,'hotels','Concorde Hotels');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (39,'hotels','Summerfield Suites Hotel');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (40,'hotels','Iberotel');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (41,'hotels','Hotel Okura');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (42,'hotels','Royal Hotels');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (43,'hotels','Four Seasons');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (44,'hotels','Cigahotels');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (45,'hotels','Shangri-La International');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (46,'hotels','Hotel Sierra');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (47,'hotels','Breakers Resort');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (48,'hotels','Hotels Melia');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (49,'hotels','Auberge Des Governeurs');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (50,'hotels','Regal 8 Inns');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (51,'hotels','Mirage Hotel and Casino');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (52,'hotels','Coast Hotels');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (53,'hotels','Parks Inns International');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (54,'hotels','Pinehurst Resort');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (55,'hotels','Treasure Island Hotel and Casino');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (56,'hotels','Barton Creek Resort');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (57,'hotels','Manhattan East Suite Hotels');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (58,'hotels','Jolly Hotels');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (59,'hotels','Candlewood Suites');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (60,'hotels','Aladdin Resort and Casino');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (61,'hotels','Golden Nugget');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (62,'hotels','Comfort Hotel International');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (63,'hotels','Journeys End Motels');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (64,'hotels','Sams Town Hotel and Casino');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (65,'hotels','Relax Inns');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (66,'hotels','Garden Place Hotel');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (67,'hotels','Soho Grand Hotel');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (68,'hotels','Ladbroke Hotels');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (69,'hotels','Tribeca Grand Hotel');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (70,'hotels','Grand Met Forum Hotels');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (71,'hotels','Grand Wailea Resort');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (72,'hotels','Miyako Hotel/Kintetsu');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (73,'hotels','Sandman Hotels');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (74,'hotels','Venture Inn');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (75,'hotels','Vagabond Hotels');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (76,'hotels','La Quinta Resort');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (77,'hotels','Mandarin International');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (78,'hotels','Frankenmuth Bavarian');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (79,'hotels','Hotel Mercure');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (80,'hotels','AL Asia Hotel');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (81,'hotels','Aliwal Park Hotel');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (82,'hotels','Amara Sanctuary Resort Sentosa');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (83,'hotels','Amoy Hotel');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (84,'hotels','Amrise Hotel');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (85,'hotels','Andaz Singapore');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (86,'hotels','Aqueen Hotel Jalan Besar');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (87,'hotels','Aqueen Hotel Lavender');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (88,'hotels','Aqueen Hotel Paya Lebar');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (89,'hotels','Arcadia Hotel');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (90,'hotels','Arton Hotel');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (91,'hotels','Ascott Orchard Singapore');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (92,'hotels','Ascott Raffles Place Singapore');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (93,'hotels','Asphodel Inn');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (94,'hotels','Bliss Hotel Singapore');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (95,'hotels','Bright Star Hotel');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (96,'hotels','Broadway Hotel');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (97,'hotels','BudgetOne Hotel');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (98,'hotels','Butternut Tree Hotel');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (99,'hotels','Cameron Hotel');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (100,'hotels','Capella Hotel, Singapore');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (101,'hotels','Capri by Fraser Changi City, Singapore');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (102,'hotels','Carlton Hotel Singapore');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (103,'hotels','Champion Hotel');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (104,'hotels','Champion Hotel City');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (105,'hotels','Changi Cove');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (106,'hotels','Classique Hotel');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (107,'hotels','Cube Family Boutique Capsule Hotel @ Chinatown');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (108,'hotels','D’Hotel');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (109,'hotels','Darlene Hotel (Geylang)');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (110,'hotels','Diamond Hotel');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (111,'hotels','Dusit Thani Laguna Singapore');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (112,'hotels','Fairmont Singapore');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (113,'hotels','five/6 Hotel Splendour');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (114,'hotels','Four Chain View Hotel');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (115,'hotels','Four Seasons Hotel Singapore');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (116,'hotels','Fragrance Hotel - Balestier');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (117,'hotels','Fragrance Hotel - Classic');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (118,'hotels','Fragrance Hotel - Kovan');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (119,'hotels','Fragrance Hotel - Lavender');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (120,'hotels','Fragrance Hotel - Oasis');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (121,'hotels','Fragrance Hotel - Ocean View');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (122,'hotels','Fragrance Hotel - Rose');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (123,'hotels','Fragrance Hotel - Viva');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (124,'hotels','Gallop Hill Top Resort');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (125,'hotels','Gallop Kranji Farm Resort');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (126,'hotels','Gay World Hotel');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (127,'hotels','Golden Star Hotel');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (128,'hotels','Goodwood Park Hotel');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (129,'hotels','Grand Hyatt Singapore');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (130,'hotels','Grand Mercure Singapore Roxy');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (131,'hotels','Haising Hotel');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (132,'hotels','Harbour Ville Hotel, Hamilton');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (133,'hotels','Heritage Collection on Chinatown');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (134,'hotels','Heritage Collection on Clarke Quay');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (135,'hotels','Heritage Collection on Seah');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (136,'hotels','Hilton Singapore');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (137,'hotels','Hoover Hotel');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (138,'hotels','Hotel 165');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (139,'hotels','Hotel 1888 Collection');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (140,'hotels','Hotel 81 Balestier');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (141,'hotels','Hotel 81 Bugis');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (142,'hotels','Hotel 81 Changi');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (143,'hotels','Hotel 81 Cherry');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (144,'hotels','Hotel 81 Chinatown');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (145,'hotels','Hotel 81 Cosy');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (146,'hotels','Hotel 81 Dickson');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (147,'hotels','Hotel 81 Elegance');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (148,'hotels','Hotel 81 Fuji');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (149,'hotels','Hotel 81 Geylang');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (150,'hotels','Hotel 81 Gold');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (151,'hotels','Hotel 81 Heritage');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (152,'hotels','Hotel 81 Hollywood');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (153,'hotels','Hotel 81 Joy');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (154,'hotels','Hotel 81 Kovan');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (155,'hotels','Hotel 81 Lavender');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (156,'hotels','Hotel 81 Lucky');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (157,'hotels','Hotel 81 Orchid');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (158,'hotels','Hotel 81 Osaka');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (159,'hotels','Hotel 81 Palace');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (160,'hotels','Hotel 81 Princess');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (161,'hotels','Hotel 81 Rochor');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (162,'hotels','Hotel 81 Sakura');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (163,'hotels','Hotel 81 Selegie');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (164,'hotels','Hotel 81 Spring');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (165,'hotels','Hotel 81 Star');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (166,'hotels','Hotel 81 Tristar');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (167,'hotels','Hotel 81 Violet');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (168,'hotels','Hotel Ascendere Pte Ltd');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (169,'hotels','Hotel Bencoolen');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (170,'hotels','Hotel Bencoolen @ Hong Kong Street');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (171,'hotels','Hotel Calmo Bugis');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (172,'hotels','Hotel Calmo Chinatown');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (173,'hotels','Hotel Classic by Venue');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (174,'hotels','Hotel Clover 33 Jalan Sultan');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (175,'hotels','Hotel Clover 5 Hongkong Street');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (176,'hotels','Hotel Clover 7 Hongkong Street');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (177,'hotels','Hotel Clover 769 North Bridge Road');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (178,'hotels','Hotel Clover The Arts');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (179,'hotels','Hotel Compass');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (180,'hotels','Hotel Conforto');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (181,'hotels','Hotel Fort Canning');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (182,'hotels','Hotel Fuji');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (183,'hotels','Hotel G Singapore');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (184,'hotels','Hotel Grand Central');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (185,'hotels','Hotel Mono');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (186,'hotels','Hotel NuVe');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (187,'hotels','Hotel NuVe Elements');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (188,'hotels','Hotel NuVe Heritage');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (189,'hotels','Hotel NuVe Urbane');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (190,'hotels','Hotel Re! @ Pearl\'s Hill');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (191,'hotels','Hotel Royal');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (192,'hotels','Hotel Royal @ Queens');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (193,'hotels','Hotel Snow Lavender');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (194,'hotels','Hotel Soloha');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (195,'hotels','Hotel YAN');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (196,'hotels','Hup Hoe Hotel');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (197,'hotels','ibis budget Singapore Ametrine');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (198,'hotels','ibis budget Singapore Bugis');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (199,'hotels','ibis Budget Singapore Clarke Quay');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (200,'hotels','ibis budget Singapore Imperial');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (201,'hotels','ibis budget Singapore Joo Chiat');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (202,'hotels','ibis budget Singapore Mount Faber');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (203,'hotels','ibis budget Singapore Sapphire');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (204,'hotels','ibis budget Singapore Selegie');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (205,'hotels','ibis budget Singapore West Coast');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (206,'hotels','J8 HOTEL');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (207,'hotels','Jade Hotel');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (208,'hotels','Jayleen 1918 Hotel');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (209,'hotels','Jayleen Clarke Quay Hotel');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (210,'hotels','JH Hotel');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (211,'hotels','JI HOTEL ORCHARD SINGAPORE');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (212,'hotels','Jin Dong Hotel');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (213,'hotels','K Hotel');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (214,'hotels','K Hotel 12');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (215,'hotels','K Hotel 14');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (216,'hotels','K Hotel 1515');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (217,'hotels','K Hotel 8');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (218,'hotels','Kam Leng Hotel');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (219,'hotels','KeSa House');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (220,'hotels','Kim Tian Hotel');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (221,'hotels','Kim Tian Hotel (Han)');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (222,'hotels','Kim Tian Hotel (Star)');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (223,'hotels','La Mode (Sophia) Hotel');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (224,'hotels','Lai Ming Hotel');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (225,'hotels','Lai Ming Hotel Cosmoland');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (226,'hotels','Lex Hotel (Lorong 8)');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (227,'hotels','Lloyd’s Inn');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (228,'hotels','lyf Funan Singapore');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (229,'hotels','M Social Singapore');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (230,'hotels','Mandarin Orchard Singapore, by Meritus');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (231,'hotels','Mandarin Oriental, Singapore');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (232,'hotels','Marina Bay Sands Singapore');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (233,'hotels','Marrison @ Desker');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (234,'hotels','Marrison Hotel');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (235,'hotels','Mayo Inn');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (236,'hotels','Meriton Hotel');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (237,'hotels','Min Wah Hotel');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (238,'hotels','Naumi Hotel Singapore');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (239,'hotels','New Cape Inn');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (240,'hotels','New Cathay Hotel (Geylang)');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (241,'hotels','New Orchid Hotel');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (242,'hotels','Nostalgia Hotel');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (243,'hotels','Oakwood Premier AMTD Singapore');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (244,'hotels','Oasia Hotel Downtown, Singapore');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (245,'hotels','One Farrer Hotel');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (246,'hotels','ONE15 Marina Club');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (247,'hotels','Orchard Hotel Singapore');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (248,'hotels','Orchard Rendezvous Hotel');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (249,'hotels','Orchid Hotel');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (250,'hotels','Pan Pacific Serviced Suites Beach Road');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (251,'hotels','Park 22 Hotel Little India');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (252,'hotels','Park View Hotel');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (253,'hotels','PARKROYAL COLLECTION Marina Bay, Singapore');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (254,'hotels','PARKROYAL COLLECTION PICKERING');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (255,'hotels','PARKROYAL on Beach Road, Singapore');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (256,'hotels','Pasir Panjang Inn');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (257,'hotels','Perak Hotel');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (258,'hotels','Populous Hotel');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (259,'hotels','Porcelain Hotel');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (260,'hotels','Q Loft Hotel @ Mackenzie');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (261,'hotels','Q Loft Hotels@Bedok');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (262,'hotels','Raffles Hotel Singapore');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (263,'hotels','Ramada by Wyndham Singapore at Zhongshan Park');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (264,'hotels','RedDoorz @ Aljunied');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (265,'hotels','RedDoorz @ Geylang');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (266,'hotels','RedDoorz near Marine Parade Central');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (267,'hotels','RedDoorz Plus @ Little India');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (268,'hotels','RedDoorz Premium @ Balestier');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (269,'hotels','RELC International Hotel');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (270,'hotels','Resorts World Sentosa – Crockfords Tower');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (271,'hotels','Resorts World Sentosa – Equarius Hotel');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (272,'hotels','Resorts World Sentosa – Hotel Michael');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (273,'hotels','Resorts World Sentosa –Beach Villas, Ocean Suites and TreeTop Lofts');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (274,'hotels','Rest Bugis Hotel');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (275,'hotels','RM Hotel');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (276,'hotels','Robertson Quay Hotel');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (277,'hotels','Sandpiper Hotel');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (278,'hotels','Santa Grand Hotel East Coast');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (279,'hotels','Seng Wah Hotel');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (280,'hotels','Shangri-La Hotel Singapore');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (281,'hotels','Shangri-La\'s Rasa Sentosa Resort & Spa, Singapore');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (282,'hotels','Sing Hoe Hotel');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (283,'hotels','Sofitel Singapore City Centre');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (284,'hotels','Sofitel Singapore Sentosa Resort & Spa');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (285,'hotels','South East Asia Hotel');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (286,'hotels','ST Signature Bugis Beach');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (287,'hotels','ST Signature Jalan Besar');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (288,'hotels','Strand Hotel');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (289,'hotels','Summer View Hotel');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (290,'hotels','Tai Hoe Hotel');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (291,'hotels','Taipei Hotel (2000)');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (292,'hotels','The Amazing Inn');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (293,'hotels','The Barracks Hotel Sentosa');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (294,'hotels','The Capitol Kempinski Hotel Singapore');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (295,'hotels','The Clan Hotel');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (296,'hotels','The Daulat');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (297,'hotels','The Duxton Reserve');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (298,'hotels','The Fullerton Bay Hotel Singapore');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (299,'hotels','The Fullerton Hotel Singapore');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (300,'hotels','The Great Madras');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (301,'hotels','The Inn At Temple Street');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (302,'hotels','The Keong Saik Hotel');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (303,'hotels','The Noble Hotel');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (304,'hotels','The Quay Hotel');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (305,'hotels','The Quay Hotel Lavender');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (306,'hotels','The Quay Hotel West Coast');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (307,'hotels','The Scarlet Hotel');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (308,'hotels','The Southbridge Hotel');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (309,'hotels','The St. Regis Singapore');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (310,'hotels','The Sultan');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (311,'hotels','The Vagabond Club');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (312,'hotels','The Warehouse Hotel');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (313,'hotels','Travelodge Harbourfront');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (314,'hotels','V Hotel Bencoolen');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (315,'hotels','Value Hotel Balestier');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (316,'hotels','Value Hotel Nice');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (317,'hotels','Value Hotel Thomson');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (318,'hotels','Venue Hotel');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (319,'hotels','Venue Hotel The Lily');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (320,'hotels','Victoria Hotel');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (321,'hotels','Villa Samadhi Singapore');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (322,'hotels','Village Hotel Bugis');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (323,'hotels','VIP Hotel');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (324,'hotels','W Singapore Sentosa Cove Hotel');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (325,'hotels','Wanderlust');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (326,'hotels','XY Hotel Bugis by Asanda Hotels and Resorts');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (327,'hotels','Yew Lian Hotel');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (328,'hotels','York Hotel Singapore');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (329,'hotels','YOTEL Singapore Orchard Road');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (330,'hotels','YOTELAIR Singapore Changi Airport');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (331,'shopping','dockers');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (332,'shopping','Forever21');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (333,'shopping','6IXTY8IGHT');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (334,'shopping','Bossini');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (335,'shopping','Aldo');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (336,'shopping','Bershka');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (337,'shopping','Crumpler');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (338,'shopping','Daiso');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (339,'shopping','Fox Kids & Baby');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (340,'shopping','Hush Puppies');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (341,'online','Amazon.sg');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (342,'online','Aliexpress');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (343,'online','Carousell');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (344,'online','EzBuy');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (345,'online','Lazada');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (346,'online','RedMart');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (347,'online','Qoo10.sg');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (348,'online','Shopee');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (349,'online','Taobao');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (350,'online','Comfort Taxi');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (351,'online','Grab');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (352,'online','Gojek');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (353,'online','Ryde');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (354,'online','Ezlink');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (355,'online','SimplyGo');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (356,'online','GrabFood');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (357,'online','FoodPanda');
-INSERT INTO `campaign_db`.`custom_category` (`id`,
-`merchant`,
-`name`) VALUES (358,'online','Deliveroo');
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (1,'hotels','Holiday Inns',3501);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (2,'hotels','Best Western',3502);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (3,'hotels','Sheraton',3503);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (4,'hotels','Hilton',3504);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (5,'hotels','Trusthouse Forte',3505);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (6,'hotels','Golden Tulip',3506);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (7,'hotels','Friendship Inns International',3507);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (8,'hotels','Quality International',3508);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (9,'hotels','Marriott',3509);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (10,'hotels','Days Inns Of America',3510);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (11,'hotels','Arabella Hotels',3511);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (12,'hotels','Intercontinental',3512);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (13,'hotels','Westin Hotels',3513);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (14,'hotels','Amerisuites',3514);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (15,'hotels','Rodeway Inns International',3515);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (16,'hotels','La Quinta Motor Inns',3516);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (17,'hotels','Americana Hotels Corporation',3517);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (18,'hotels','Sol Hotels',3518);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (19,'hotels','PLM/ETAP International',3519);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (20,'hotels','Meridien',3520);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (21,'hotels','Crest Hotels',3521);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (22,'hotels','Tokyo Group',3522);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (23,'hotels','Peninsula Hotels',3523);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (24,'hotels','Welcomgroup',3524);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (25,'hotels','Dunfey Hotels',3525);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (26,'hotels','Prince Hotels',3526);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (27,'hotels','Downtowner Passport',3527);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (28,'hotels','Thunderbird/Red Lion',3528);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (29,'hotels','CP (Canadian Pacific)',3529);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (30,'hotels','Renaissance Hotels',3530);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (31,'hotels','Kauai Coconut Beach Resort',3531);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (32,'hotels','Royal Kona Resort',3532);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (33,'hotels','Park Inn by Radisson',3533);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (34,'hotels','Southern Pacific Hotel',3534);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (35,'hotels','Hilton International',3535);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (36,'hotels','AMFAC Hotels',3536);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (37,'hotels','Ana Hotels',3537);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (38,'hotels','Concorde Hotels',3538);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (39,'hotels','Summerfield Suites Hotel',3539);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (40,'hotels','Iberotel',3540);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (41,'hotels','Hotel Okura',3541);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (42,'hotels','Royal Hotels',3542);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (43,'hotels','Four Seasons',3543);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (44,'hotels','Cigahotels',3544);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (45,'hotels','Shangri-La International',3545);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (46,'hotels','Hotel Sierra',3546);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (47,'hotels','Breakers Resort',3547);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (48,'hotels','Hotels Melia',3548);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (49,'hotels','Auberge Des Governeurs',3549);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (50,'hotels','Regal 8 Inns',3550);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (51,'hotels','Mirage Hotel and Casino',3551);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (52,'hotels','Coast Hotels',3552);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (53,'hotels','Parks Inns International',3553);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (54,'hotels','Pinehurst Resort',3554);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (55,'hotels','Treasure Island Hotel and Casino',3555);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (56,'hotels','Barton Creek Resort',3556);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (57,'hotels','Manhattan East Suite Hotels',3557);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (58,'hotels','Jolly Hotels',3558);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (59,'hotels','Candlewood Suites',3559);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (60,'hotels','Aladdin Resort and Casino',3560);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (61,'hotels','Golden Nugget',3561);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (62,'hotels','Comfort Hotel International',3562);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (63,'hotels','Journeys End Motels',3563);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (64,'hotels','Sams Town Hotel and Casino',3564);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (65,'hotels','Relax Inns',3565);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (66,'hotels','Garden Place Hotel',3566);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (67,'hotels','Soho Grand Hotel',3567);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (68,'hotels','Ladbroke Hotels',3568);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (69,'hotels','Tribeca Grand Hotel',3569);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (70,'hotels','Grand Met Forum Hotels',3570);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (71,'hotels','Grand Wailea Resort',3571);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (72,'hotels','Miyako Hotel/Kintetsu',3572);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (73,'hotels','Sandman Hotels',3573);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (74,'hotels','Venture Inn',3574);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (75,'hotels','Vagabond Hotels',3575);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (76,'hotels','La Quinta Resort',3576);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (77,'hotels','Mandarin International',3577);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (78,'hotels','Frankenmuth Bavarian',3578);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (79,'hotels','Hotel Mercure',3579);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (80,'hotels','AL Asia Hotel',3580);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (81,'hotels','Aliwal Park Hotel',3581);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (82,'hotels','Amara Sanctuary Resort Sentosa',3582);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (83,'hotels','Amoy Hotel',3583);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (84,'hotels','Amrise Hotel',3584);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (85,'hotels','Andaz Singapore',3585);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (86,'hotels','Aqueen Hotel Jalan Besar',3586);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (87,'hotels','Aqueen Hotel Lavender',3587);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (88,'hotels','Aqueen Hotel Paya Lebar',3588);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (89,'hotels','Arcadia Hotel',3589);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (90,'hotels','Arton Hotel',3590);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (91,'hotels','Ascott Orchard Singapore',3591);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (92,'hotels','Ascott Raffles Place Singapore',3592);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (93,'hotels','Asphodel Inn',3593);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (94,'hotels','Bliss Hotel Singapore',3594);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (95,'hotels','Bright Star Hotel',3595);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (96,'hotels','Broadway Hotel',3596);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (97,'hotels','BudgetOne Hotel',3597);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (98,'hotels','Butternut Tree Hotel',3598);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (99,'hotels','Cameron Hotel',3599);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (100,'hotels','Capella Hotel, Singapore',3600);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (101,'hotels','Capri by Fraser Changi City, Singapore',3601);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (102,'hotels','Carlton Hotel Singapore',3602);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (103,'hotels','Champion Hotel',3603);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (104,'hotels','Champion Hotel City',3604);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (105,'hotels','Changi Cove',3605);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (106,'hotels','Classique Hotel',3606);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (107,'hotels','Cube Family Boutique Capsule Hotel @ Chinatown',3607);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (108,'hotels','D’Hotel',3608);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (109,'hotels','Darlene Hotel (Geylang)',3609);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (110,'hotels','Diamond Hotel',3610);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (111,'hotels','Dusit Thani Laguna Singapore',3611);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (112,'hotels','Fairmont Singapore',3612);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (113,'hotels','five/6 Hotel Splendour',3613);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (114,'hotels','Four Chain View Hotel',3614);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (115,'hotels','Four Seasons Hotel Singapore',3615);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (116,'hotels','Fragrance Hotel - Balestier',3616);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (117,'hotels','Fragrance Hotel - Classic',3617);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (118,'hotels','Fragrance Hotel - Kovan',3618);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (119,'hotels','Fragrance Hotel - Lavender',3619);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (120,'hotels','Fragrance Hotel - Oasis',3620);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (121,'hotels','Fragrance Hotel - Ocean View',3621);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (122,'hotels','Fragrance Hotel - Rose',3622);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (123,'hotels','Fragrance Hotel - Viva',3623);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (124,'hotels','Gallop Hill Top Resort',3624);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (125,'hotels','Gallop Kranji Farm Resort',3625);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (126,'hotels','Gay World Hotel',3626);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (127,'hotels','Golden Star Hotel',3627);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (128,'hotels','Goodwood Park Hotel',3628);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (129,'hotels','Grand Hyatt Singapore',3629);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (130,'hotels','Grand Mercure Singapore Roxy',3630);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (131,'hotels','Haising Hotel',3631);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (132,'hotels','Harbour Ville Hotel, Hamilton',3632);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (133,'hotels','Heritage Collection on Chinatown',3633);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (134,'hotels','Heritage Collection on Clarke Quay',3634);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (135,'hotels','Heritage Collection on Seah',3635);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (136,'hotels','Hilton Singapore',3636);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (137,'hotels','Hoover Hotel',3637);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (138,'hotels','Hotel 165',3638);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (139,'hotels','Hotel 1888 Collection',3639);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (140,'hotels','Hotel 81 Balestier',3640);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (141,'hotels','Hotel 81 Bugis',3641);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (142,'hotels','Hotel 81 Changi',3642);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (143,'hotels','Hotel 81 Cherry',3643);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (144,'hotels','Hotel 81 Chinatown',3644);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (145,'hotels','Hotel 81 Cosy',3645);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (146,'hotels','Hotel 81 Dickson',3646);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (147,'hotels','Hotel 81 Elegance',3647);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (148,'hotels','Hotel 81 Fuji',3648);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (149,'hotels','Hotel 81 Geylang',3649);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (150,'hotels','Hotel 81 Gold',3650);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (151,'hotels','Hotel 81 Heritage',3651);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (152,'hotels','Hotel 81 Hollywood',3652);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (153,'hotels','Hotel 81 Joy',3653);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (154,'hotels','Hotel 81 Kovan',3654);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (155,'hotels','Hotel 81 Lavender',3655);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (156,'hotels','Hotel 81 Lucky',3656);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (157,'hotels','Hotel 81 Orchid',3657);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (158,'hotels','Hotel 81 Osaka',3658);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (159,'hotels','Hotel 81 Palace',3659);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (160,'hotels','Hotel 81 Princess',3660);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (161,'hotels','Hotel 81 Rochor',3661);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (162,'hotels','Hotel 81 Sakura',3662);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (163,'hotels','Hotel 81 Selegie',3663);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (164,'hotels','Hotel 81 Spring',3664);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (165,'hotels','Hotel 81 Star',3665);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (166,'hotels','Hotel 81 Tristar',3666);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (167,'hotels','Hotel 81 Violet',3667);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (168,'hotels','Hotel Ascendere Pte Ltd',3668);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (169,'hotels','Hotel Bencoolen',3669);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (170,'hotels','Hotel Bencoolen @ Hong Kong Street',3670);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (171,'hotels','Hotel Calmo Bugis',3671);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (172,'hotels','Hotel Calmo Chinatown',3672);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (173,'hotels','Hotel Classic by Venue',3673);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (174,'hotels','Hotel Clover 33 Jalan Sultan',3674);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (175,'hotels','Hotel Clover 5 Hongkong Street',3675);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (176,'hotels','Hotel Clover 7 Hongkong Street',3676);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (177,'hotels','Hotel Clover 769 North Bridge Road',3677);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (178,'hotels','Hotel Clover The Arts',3678);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (179,'hotels','Hotel Compass',3679);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (180,'hotels','Hotel Conforto',3680);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (181,'hotels','Hotel Fort Canning',3681);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (182,'hotels','Hotel Fuji',3682);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (183,'hotels','Hotel G Singapore',3683);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (184,'hotels','Hotel Grand Central',3684);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (185,'hotels','Hotel Mono',3685);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (186,'hotels','Hotel NuVe',3686);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (187,'hotels','Hotel NuVe Elements',3687);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (188,'hotels','Hotel NuVe Heritage',3688);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (189,'hotels','Hotel NuVe Urbane',3689);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (190,'hotels','Hotel Re! @ Pearl\'s Hill',3690);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (191,'hotels','Hotel Royal',3691);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (192,'hotels','Hotel Royal @ Queens',3692);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (193,'hotels','Hotel Snow Lavender',3693);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (194,'hotels','Hotel Soloha',3694);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (195,'hotels','Hotel YAN',3695);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (196,'hotels','Hup Hoe Hotel',3696);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (197,'hotels','ibis budget Singapore Ametrine',3697);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (198,'hotels','ibis budget Singapore Bugis',3698);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (199,'hotels','ibis Budget Singapore Clarke Quay',3699);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (200,'hotels','ibis budget Singapore Imperial',3700);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (201,'hotels','ibis budget Singapore Joo Chiat',3701);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (202,'hotels','ibis budget Singapore Mount Faber',3702);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (203,'hotels','ibis budget Singapore Sapphire',3703);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (204,'hotels','ibis budget Singapore Selegie',3704);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (205,'hotels','ibis budget Singapore West Coast',3705);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (206,'hotels','J8 HOTEL',3706);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (207,'hotels','Jade Hotel',3707);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (208,'hotels','Jayleen 1918 Hotel',3708);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (209,'hotels','Jayleen Clarke Quay Hotel',3709);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (210,'hotels','JH Hotel',3710);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (211,'hotels','JI HOTEL ORCHARD SINGAPORE',3711);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (212,'hotels','Jin Dong Hotel',3712);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (213,'hotels','K Hotel',3713);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (214,'hotels','K Hotel 12',3714);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (215,'hotels','K Hotel 14',3715);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (216,'hotels','K Hotel 1515',3716);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (217,'hotels','K Hotel 8',3717);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (218,'hotels','Kam Leng Hotel',3718);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (219,'hotels','KeSa House',3719);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (220,'hotels','Kim Tian Hotel',3720);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (221,'hotels','Kim Tian Hotel (Han)',3721);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (222,'hotels','Kim Tian Hotel (Star)',3722);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (223,'hotels','La Mode (Sophia) Hotel',3723);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (224,'hotels','Lai Ming Hotel',3724);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (225,'hotels','Lai Ming Hotel Cosmoland',3725);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (226,'hotels','Lex Hotel (Lorong 8)',3726);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (227,'hotels','Lloyd’s Inn',3727);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (228,'hotels','lyf Funan Singapore',3728);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (229,'hotels','M Social Singapore',3729);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (230,'hotels','Mandarin Orchard Singapore, by Meritus',3730);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (231,'hotels','Mandarin Oriental, Singapore',3731);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (232,'hotels','Marina Bay Sands Singapore',3732);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (233,'hotels','Marrison @ Desker',3733);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (234,'hotels','Marrison Hotel',3734);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (235,'hotels','Mayo Inn',3735);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (236,'hotels','Meriton Hotel',3736);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (237,'hotels','Min Wah Hotel',3737);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (238,'hotels','Naumi Hotel Singapore',3738);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (239,'hotels','New Cape Inn',3739);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (240,'hotels','New Cathay Hotel (Geylang)',3740);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (241,'hotels','New Orchid Hotel',3741);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (242,'hotels','Nostalgia Hotel',3742);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (243,'hotels','Oakwood Premier AMTD Singapore',3743);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (244,'hotels','Oasia Hotel Downtown, Singapore',3744);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (245,'hotels','One Farrer Hotel',3745);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (246,'hotels','ONE15 Marina Club',3746);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (247,'hotels','Orchard Hotel Singapore',3747);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (248,'hotels','Orchard Rendezvous Hotel',3748);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (249,'hotels','Orchid Hotel',3749);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (250,'hotels','Pan Pacific Serviced Suites Beach Road',3750);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (251,'hotels','Park 22 Hotel Little India',3751);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (252,'hotels','Park View Hotel',3752);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (253,'hotels','PARKROYAL COLLECTION Marina Bay, Singapore',3753);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (254,'hotels','PARKROYAL COLLECTION PICKERING',3754);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (255,'hotels','PARKROYAL on Beach Road, Singapore',3755);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (256,'hotels','Pasir Panjang Inn',3757);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (257,'hotels','Perak Hotel',3758);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (258,'hotels','Populous Hotel',3759);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (259,'hotels','Porcelain Hotel',3760);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (260,'hotels','Q Loft Hotel @ Mackenzie',3761);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (261,'hotels','Q Loft Hotels@Bedok',3762);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (262,'hotels','Raffles Hotel Singapore',3763);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (263,'hotels','Ramada by Wyndham Singapore at Zhongshan Park',3764);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (264,'hotels','RedDoorz @ Aljunied',3765);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (265,'hotels','RedDoorz @ Geylang',3766);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (266,'hotels','RedDoorz near Marine Parade Central',3767);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (267,'hotels','RedDoorz Plus @ Little India',3768);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (268,'hotels','RedDoorz Premium @ Balestier',3769);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (269,'hotels','RELC International Hotel',3770);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (270,'hotels','Resorts World Sentosa – Crockfords Tower',3771);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (271,'hotels','Resorts World Sentosa – Equarius Hotel',3772);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (272,'hotels','Resorts World Sentosa – Hotel Michael',3773);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (273,'hotels','Resorts World Sentosa –Beach Villas, Ocean Suites and TreeTop Lofts',3774);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (274,'hotels','Rest Bugis Hotel',3775);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (275,'hotels','RM Hotel',3776);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (276,'hotels','Robertson Quay Hotel',3777);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (277,'hotels','Sandpiper Hotel',3778);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (278,'hotels','Santa Grand Hotel East Coast',3779);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (279,'hotels','Seng Wah Hotel',3780);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (280,'hotels','Shangri-La Hotel Singapore',3781);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (281,'hotels','Shangri-La\'s Rasa Sentosa Resort & Spa, Singapore',3782);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (282,'hotels','Sing Hoe Hotel',3783);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (283,'hotels','Sofitel Singapore City Centre',3784);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (284,'hotels','Sofitel Singapore Sentosa Resort & Spa',3785);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (285,'hotels','South East Asia Hotel',3786);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (286,'hotels','ST Signature Bugis Beach',3787);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (287,'hotels','ST Signature Jalan Besar',3788);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (288,'hotels','Strand Hotel',3789);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (289,'hotels','Summer View Hotel',3790);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (290,'hotels','Tai Hoe Hotel',3791);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (291,'hotels','Taipei Hotel (2000)',3792);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (292,'hotels','The Amazing Inn',3793);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (293,'hotels','The Barracks Hotel Sentosa',3794);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (294,'hotels','The Capitol Kempinski Hotel Singapore',3795);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (295,'hotels','The Clan Hotel',3796);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (296,'hotels','The Daulat',3797);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (297,'hotels','The Duxton Reserve',3798);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (298,'hotels','The Fullerton Bay Hotel Singapore',3799);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (299,'hotels','The Fullerton Hotel Singapore',3800);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (300,'hotels','The Great Madras',3801);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (301,'hotels','The Inn At Temple Street',3802);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (302,'hotels','The Keong Saik Hotel',3803);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (303,'hotels','The Noble Hotel',3804);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (304,'hotels','The Quay Hotel',3805);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (305,'hotels','The Quay Hotel Lavender',3806);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (306,'hotels','The Quay Hotel West Coast',3807);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (307,'hotels','The Scarlet Hotel',3808);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (308,'hotels','The Southbridge Hotel',3809);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (309,'hotels','The St. Regis Singapore',3810);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (310,'hotels','The Sultan',3811);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (311,'hotels','The Vagabond Club',3812);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (312,'hotels','The Warehouse Hotel',3813);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (313,'hotels','Travelodge Harbourfront',3814);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (314,'hotels','V Hotel Bencoolen',3815);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (315,'hotels','Value Hotel Balestier',3816);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (316,'hotels','Value Hotel Nice',3817);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (317,'hotels','Value Hotel Thomson',3818);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (318,'hotels','Venue Hotel',3819);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (319,'hotels','Venue Hotel The Lily',3820);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (320,'hotels','Victoria Hotel',3821);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (321,'hotels','Villa Samadhi Singapore',3822);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (322,'hotels','Village Hotel Bugis',3823);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (323,'hotels','VIP Hotel',3824);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (324,'hotels','W Singapore Sentosa Cove Hotel',3825);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (325,'hotels','Wanderlust',3826);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (326,'hotels','XY Hotel Bugis by Asanda Hotels and Resorts',3827);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (327,'hotels','Yew Lian Hotel',3828);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (328,'hotels','York Hotel Singapore',3829);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (329,'hotels','YOTEL Singapore Orchard Road',3830);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (330,'hotels','YOTELAIR Singapore Changi Airport',3831);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (331,'shopping','dockers',5611);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (332,'shopping','Forever21',5621);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (333,'shopping','6IXTY8IGHT',5631);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (334,'shopping','Bossini',5651);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (335,'shopping','Aldo',5661);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (336,'shopping','Bershka',5691);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (337,'shopping','Crumpler',5699);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (338,'shopping','Daiso',5311);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (339,'shopping','Fox Kids & Baby',5641);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (340,'shopping','Hush Puppies',5651);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (341,'online','Amazon.sg',5999);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (342,'online','Aliexpress',5964);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (343,'online','Carousell',5999);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (344,'online','EzBuy',5691);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (345,'online','Lazada',5311);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (346,'online','RedMart',5411);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (347,'online','Qoo10.sg',5399);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (348,'online','Shopee',5399);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (349,'online','Taobao App',5311);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (350,'online','Taobao PC',5411);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (351,'online','Comfort Taxi',4121);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (352,'online','Grab',4121);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (353,'online','Gojek',4121);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (354,'online','Ryde',5734);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (355,'online','Ezlink',6540);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (356,'online','SimplyGo',4111);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (357,'online','GrabFood',5499);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (358,'online','FoodPanda',5499);
+INSERT INTO `campaign_db`.`custom_category` (`id`,`merchant`,`name`,`mcc`) VALUES (359,'online','Deliveroo',5499);
