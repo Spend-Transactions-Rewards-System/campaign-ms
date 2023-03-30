@@ -103,7 +103,8 @@ public class CampaignService {
             return campaign.getRewardRate() * spendBean.getAmount() * 1.35;
         }
 
-        return campaign.getRewardRate() * spendBean.getAmount();
+        return spendBean.getCardType().contains("Shopping") ? Math.floor(campaign.getRewardRate() * spendBean.getAmount()) :
+                campaign.getRewardRate() * spendBean.getAmount();
     }
 
 
