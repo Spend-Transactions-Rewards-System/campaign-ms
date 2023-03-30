@@ -156,13 +156,11 @@ public class SpendService {
         //Given merchant is part of the custom category, only one merchant will be maintained for each custom category
         CustomCategory customCategory = customCategories.get(0);
 
-        for(Mcc obj : customCategory.getMccList()){
-            if(spendBean.getMcc() == obj.getMcc()){
-                return createReward(spendBean, campaignService.computeReward(campaign, spendBean),
-                        remarksFactory(campaign));
-            }
+        if(spendBean.getMcc() == customCategory.getMcc()){
+            return createReward(spendBean, campaignService.computeReward(campaign, spendBean),
+                    remarksFactory(campaign));
         }
-
+        
         //Merchant is part of the mainted customCategory but no matching mcc for the spend
         return null;
     }

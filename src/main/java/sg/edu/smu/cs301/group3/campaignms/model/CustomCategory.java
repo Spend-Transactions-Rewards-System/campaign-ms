@@ -24,8 +24,7 @@ public class CustomCategory {
 
     private String name;
 
-    @OneToMany(cascade = {CascadeType.REFRESH})
-    private List<Mcc> mccList;
+    private int mcc;
 
     private String merchant;
 
