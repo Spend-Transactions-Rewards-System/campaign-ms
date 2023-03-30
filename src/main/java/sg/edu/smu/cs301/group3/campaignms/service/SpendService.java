@@ -46,6 +46,7 @@ public class SpendService {
 
         RewardBean rewardBean = null;
 
+        //process base rule
         for (int i = 0 ; i< baseList.size(); i++) {
 
             Campaign rule = baseList.get(i);
@@ -79,6 +80,7 @@ public class SpendService {
             }
         }
 
+        //process Category Rule
         for (Campaign categoryRule: categoryList) {
             if(categoryRule.getCustomCategoryName() != null ||
                     !categoryRule.getCustomCategoryName().isEmpty() &&
@@ -100,17 +102,19 @@ public class SpendService {
             }
         }
 
+        //process campaignRule
         for (Campaign campaignRule: campaignList) {
-            if(campaignRule.getCustomCategoryName() != null ||
-                    !campaignRule.getCustomCategoryName().isEmpty()) {
-                rewardBean = processCustomCategoryWithIsForeign(spendBean, campaignRule);
+            if(campaignRule.getMerchant()!=null &&
+                    campaignRule.getMinDollarSpent()>0) {
+
+                rewardBean = processMerchantSpendRewardWithMinSpend(spendBean, campaignRule);
+
                 if(rewardBean!= null) {
                     list.add(rewardBean);
                     break;
                 }
             }
         }
-
 
         return list;
     }
@@ -177,12 +181,40 @@ public class SpendService {
 
     private RewardBean processMinimumSpendReward(SpendBean spendBean, Campaign campaign) {
 
-        if(spendBean.getAmount() >= campaign.getMinDollarSpent()) {
+        if(spendBean.getAmount() > campaign.getMinDollarSpent()) {
             return createReward(spendBean, campaignService.computeReward(campaign, spendBean),
                     remarksFactory(campaign));
         }
 
         return null;
+    }
+
+    private RewardBean processMerchantSpendReward(SpendBean spendBean, Campaign campaign) {
+        if(spendBean.getMerchant().equalsIgnoreCase(campaign.getMerchant())) {
+            return createReward(spendBean, campaignService.computeReward(campaign, spendBean),
+                    remarksFactory(campaign));
+        }
+        return null;
+    }
+
+    private RewardBean processMerchantSpendRewardInForeign(SpendBean spendBean, Campaign campaign) {
+
+        RewardBean result = processIsForeignReward(spendBean, campaign);
+        if(result==null) {
+            return null;
+        }
+
+       return processMerchantSpendReward(spendBean, campaign);
+    }
+
+    private RewardBean processMerchantSpendRewardWithMinSpend(SpendBean spendBean, Campaign campaign) {
+
+        RewardBean result = processMinimumSpendReward(spendBean, campaign);
+        if(result==null) {
+            return null;
+        }
+
+        return processMerchantSpendReward(spendBean, campaign);
     }
 
     private String remarksFactory(Campaign campaign) {
