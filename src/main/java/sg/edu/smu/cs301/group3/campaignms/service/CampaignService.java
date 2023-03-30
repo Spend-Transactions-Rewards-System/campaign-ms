@@ -98,6 +98,11 @@ public class CampaignService {
     }
 
     public double computeReward(Campaign campaign, SpendBean spendBean){
+
+        if(spendBean.getCurrency().equalsIgnoreCase("USD")) {
+            return campaign.getRewardRate() * spendBean.getAmount() * 1.35;
+        }
+
         return campaign.getRewardRate() * spendBean.getAmount();
     }
 
