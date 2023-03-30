@@ -33,6 +33,9 @@ public class MccExclusionService {
 
     public Boolean isExcluded(SpendBean spendBean){
         Set<Integer> mccExclusions = getMccs(spendBean.getCardType());
+        if(mccExclusions.isEmpty()){
+            return false;
+        }
         return mccExclusions.contains(spendBean.getMcc());
     }
 }
