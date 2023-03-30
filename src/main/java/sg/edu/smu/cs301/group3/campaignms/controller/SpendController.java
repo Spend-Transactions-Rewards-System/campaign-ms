@@ -12,6 +12,8 @@ import sg.edu.smu.cs301.group3.campaignms.beans.RewardBean;
 import sg.edu.smu.cs301.group3.campaignms.beans.SpendBean;
 import sg.edu.smu.cs301.group3.campaignms.service.SpendService;
 
+import java.util.List;
+
 @RestController
 public class SpendController {
 
@@ -23,13 +25,13 @@ public class SpendController {
     @Value("${aws.campaign.to.card.queue.url}")
     private String campaignToCardQueueUrl;
 
-    public void sendMessage(RewardBean reward){
+    public void sendMessage(List<RewardBean> reward){
         queueMessagingTemplate.send(campaignToCardQueueUrl, MessageBuilder.withPayload(reward).build());
     }
 
     @GetMapping("/convert")
     public void convertAndSend(@RequestBody SpendBean spendBean){
-        RewardBean reward = spendService.convertToReward(spendBean);
+        List<RewardBean> reward = spendService.convertToReward(spendBean);
         sendMessage(reward);
     }
 }

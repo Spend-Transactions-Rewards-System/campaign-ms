@@ -23,12 +23,16 @@ public class Campaign {
     private String title;
     private Timestamp startDate;
     private Timestamp endDate;
-    private String mcc;
+    private String merchant;
     private double minDollarSpent;
-    private int rewardRate;
+    private double rewardRate;
 
-    @OneToOne(cascade = {CascadeType.REFRESH})
+    private boolean isForeign;
+
+    @ManyToOne
+    @JoinColumn(name = "cardType_id", referencedColumnName = "id")
     private CardType cardType;
     private boolean isActive;
-    private String customCategory;
+
+    private String customCategoryName;
 }

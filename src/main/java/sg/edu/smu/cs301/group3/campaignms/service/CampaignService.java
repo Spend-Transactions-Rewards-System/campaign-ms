@@ -3,6 +3,7 @@ package sg.edu.smu.cs301.group3.campaignms.service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import sg.edu.smu.cs301.group3.campaignms.beans.CampaignBean;
+import sg.edu.smu.cs301.group3.campaignms.beans.SpendBean;
 import sg.edu.smu.cs301.group3.campaignms.model.Campaign;
 import sg.edu.smu.cs301.group3.campaignms.model.CardType;
 import sg.edu.smu.cs301.group3.campaignms.repository.CampaignsRepository;
@@ -14,13 +15,15 @@ import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.Locale;
 
+import static sg.edu.smu.cs301.group3.campaignms.constants.DateHelper.DATE_FORMAT;
+
 @Service
 @RequiredArgsConstructor
 public class CampaignService {
     private final CampaignsRepository campaignsRepository;
     private final CardTypeRepository cardTypeRepository;
 
-    private final SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);
+    private final SimpleDateFormat formatter = new SimpleDateFormat(DATE_FORMAT, Locale.ENGLISH);
 
     public List<Campaign> getAllCampaign() {
         return campaignsRepository.findAll();
@@ -50,7 +53,7 @@ public class CampaignService {
                 .title(campaignBean.getTitle())
                 .startDate(new Timestamp(startDate.getTime()))
                 .endDate(new Timestamp(endDate.getTime()))
-                .mcc(campaignBean.getMcc())
+                .merchant(campaignBean.getMcc())
                 .minDollarSpent(campaignBean.getMinDollarSpent())
                 .rewardRate(campaignBean.getPointsPerDollar())
                 .cardType(cardType)
@@ -69,7 +72,7 @@ public class CampaignService {
         retrievedCampaign.setTitle(campaignBean.getTitle());
         retrievedCampaign.setStartDate(new Timestamp(startDate.getTime()));
         retrievedCampaign.setEndDate(new Timestamp(endDate.getTime()));
-        retrievedCampaign.setMcc(campaignBean.getMcc());
+        retrievedCampaign.setMerchant(campaignBean.getMcc());
         retrievedCampaign.setMinDollarSpent(campaignBean.getMinDollarSpent());
         retrievedCampaign.setRewardRate(campaignBean.getPointsPerDollar());
         retrievedCampaign.setActive(withinCampaignPeriod(retrievedCampaign));
@@ -87,4 +90,21 @@ public class CampaignService {
     private boolean withinCampaignPeriod(Campaign campaign) {
         return campaign.getStartDate().before(new Date(System.currentTimeMillis())) && campaign.getEndDate().after(new Date(System.currentTimeMillis()));
     }
+
+    public boolean isValid(Campaign campaign, Timestamp current){
+        Timestamp startDate = campaign.getStartDate();
+        Timestamp endDate = campaign.getEndDate();
+        return startDate.before(current) && endDate.after(current);
+    }
+
+    public double computeReward(Campaign campaign, SpendBean spendBean){
+
+        if(spendBean.getCurrency().equalsIgnoreCase("USD")) {
+            return campaign.getRewardRate() * spendBean.getAmount() * 1.35;
+        }
+
+        return campaign.getRewardRate() * spendBean.getAmount();
+    }
+
+
 }

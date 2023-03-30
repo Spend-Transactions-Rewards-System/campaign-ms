@@ -23,7 +23,7 @@ public class CampaignBean {
     @JsonProperty("min_dollar_spent")
     private double minDollarSpent;
     @JsonProperty("points_per_dollar")
-    private int pointsPerDollar;
+    private double pointsPerDollar;
     @JsonProperty("card_program_id")
     private Long cardProgramId;
     @JsonProperty("notifications_list")
@@ -34,7 +34,7 @@ public class CampaignBean {
                 .title(campaign.getTitle())
                 .startDate(campaign.getStartDate().toString())
                 .endDate(campaign.getEndDate().toString())
-                .mcc(campaign.getMcc())
+                .mcc(campaign.getMerchant())
                 .minDollarSpent(campaign.getMinDollarSpent())
                 .pointsPerDollar(campaign.getRewardRate())
                 .cardProgramId(campaign.getCardType().getId())

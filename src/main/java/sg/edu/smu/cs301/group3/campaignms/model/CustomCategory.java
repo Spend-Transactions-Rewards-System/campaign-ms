@@ -6,23 +6,28 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.util.Pair;
 
-import java.util.List;
+import java.util.*;
 
-@Entity
-@NoArgsConstructor
-@AllArgsConstructor
 @Data
+@Table(name = "custom_category")
 @Builder
-public class CardType {
+@Entity
+@AllArgsConstructor
+@NoArgsConstructor
+public class CustomCategory {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
-    private String tenant;
 
-    @JsonIgnore
-    @OneToMany(mappedBy = "cardType", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Campaign> campaignList;
+    private String name;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name="mcc", nullable=false)
+    private Mcc mcc;
+
+    private String merchant;
+
 }
