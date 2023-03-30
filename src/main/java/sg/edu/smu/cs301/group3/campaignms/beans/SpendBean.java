@@ -1,10 +1,10 @@
 package sg.edu.smu.cs301.group3.campaignms.beans;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Builder;
 import lombok.Data;
 import sg.edu.smu.cs301.group3.campaignms.model.CardType;
 
-import java.sql.Timestamp;
-import java.util.Date;
+import java.sql.Date;
 
 @Data
 @Builder
@@ -25,7 +25,7 @@ public class SpendBean {
 
     private double amount;
 
-    private Timestamp transaction_date;
+    private String transaction_date;
 
     private String cardType;
 }

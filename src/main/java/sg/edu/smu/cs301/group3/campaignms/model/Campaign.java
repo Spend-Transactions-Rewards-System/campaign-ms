@@ -1,5 +1,6 @@
 package sg.edu.smu.cs301.group3.campaignms.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -7,7 +8,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 
-import java.sql.Timestamp;
+import java.sql.Date;
 
 @Data
 @Table(name = "campaign")
@@ -21,8 +22,11 @@ public class Campaign {
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long campaignId;
     private String title;
-    private Timestamp startDate;
-    private Timestamp endDate;
+
+    @JsonFormat(pattern="dd/MM/yyyy")
+    private Date startDate;
+    @JsonFormat(pattern="dd/MM/yyyy")
+    private Date endDate;
     private String merchant;
     private double minDollarSpent;
     private double rewardRate;

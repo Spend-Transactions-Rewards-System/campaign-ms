@@ -12,7 +12,7 @@ public class RewardBean {
 
     private Long transaction_id;
 
-    private Date transaction_date;
+    private String transaction_date;
 
     private Long card_id;
 

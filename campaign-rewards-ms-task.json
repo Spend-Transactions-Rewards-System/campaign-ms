@@ -1,5 +1,5 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:ap-southeast-1:148484133023:task-definition/campaign-rewards-ms:1",
+    "taskDefinitionArn": "arn:aws:ecs:ap-southeast-1:148484133023:task-definition/campaign-rewards-ms:27",
     "containerDefinitions": [
         {
             "name": "campaign-rewards-ms-container",
@@ -22,7 +22,7 @@
                 },
                 {
                     "name": "JPA_DDL_CONFIG",
-                    "value": "create"
+                    "value": "none"
                 },
                 {
                     "name": "DB_MYSQL_USERNAME",
@@ -41,7 +41,6 @@
                     "value": "IWOdztSiDynA6OP2hn7MhRBFEyQMnZZ1T+khP5SV"
                 }
             ],
-            "environmentFiles": [],
             "mountPoints": [],
             "volumesFrom": [],
             "logConfiguration": {
@@ -59,7 +58,7 @@
     "taskRoleArn": "arn:aws:iam::148484133023:role/ECS-Role",
     "executionRoleArn": "arn:aws:iam::148484133023:role/ecsTaskExecutionRole",
     "networkMode": "awsvpc",
-    "revision": 1,
+    "revision": 27,
     "volumes": [],
     "status": "ACTIVE",
     "requiresAttributes": [
@@ -105,6 +104,6 @@
     ],
     "cpu": "1024",
     "memory": "3072",
-    "registeredAt": "2023-03-27T14:38:12.493000+08:00",
+    "registeredAt": "2023-03-31T00:27:27.759000+08:00",
     "registeredBy": "arn:aws:iam::148484133023:user/itsag1t3"
 }
