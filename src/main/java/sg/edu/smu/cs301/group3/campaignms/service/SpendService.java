@@ -75,7 +75,7 @@ public class SpendService {
                 }
             }
 
-            if(i == baseList.size()) {
+            if(i == baseList.size() - 1) {
                 list.add(processBaseReward(spendBean, rule));
             }
         }
