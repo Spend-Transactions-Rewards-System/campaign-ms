@@ -94,7 +94,7 @@ public class SpendService {
 
             if(categoryRule.getCustomCategoryName() != null ||
                     !categoryRule.getCustomCategoryName().isEmpty()) {
-                rewardBean = processCustomCategoryWithIsForeign(spendBean, categoryRule);
+                rewardBean = processCustomCategory(spendBean, categoryRule);
                 if(rewardBean!= null) {
                     list.add(rewardBean);
                     break;
@@ -105,7 +105,7 @@ public class SpendService {
         //process campaignRule
         for (Campaign campaignRule: campaignList) {
             if(campaignRule.getMerchant()!=null &&
-                    campaignRule.getMinDollarSpent()>0) {
+                    campaignRule.getMinDollarSpent()>0.0) {
 
                 rewardBean = processMerchantSpendRewardWithMinSpend(spendBean, campaignRule);
 
@@ -154,11 +154,12 @@ public class SpendService {
         }
 
         //Given merchant is part of the custom category, only one merchant will be maintained for each custom category
-        CustomCategory customCategory = customCategories.get(0);
 
-        if(spendBean.getMcc() == customCategory.getMcc().getMcc()){
-            return createReward(spendBean, campaignService.computeReward(campaign, spendBean),
-                    remarksFactory(campaign));
+        for(CustomCategory customCategory : customCategories){
+            if(spendBean.getMcc() == customCategory.getMcc().getMcc()){
+                return createReward(spendBean, campaignService.computeReward(campaign, spendBean),
+                        remarksFactory(campaign));
+            }
         }
         
         //Merchant is part of the mainted customCategory but no matching mcc for the spend
