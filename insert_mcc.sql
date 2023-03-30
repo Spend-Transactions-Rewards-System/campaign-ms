@@ -876,3 +876,4 @@ INSERT INTO mcc(mcc,description,mcc_group) VALUES (3828,'Yew Lian Hotel','SG Hot
 INSERT INTO mcc(mcc,description,mcc_group) VALUES (3829,'York Hotel Singapore','SG Hotel');
 INSERT INTO mcc(mcc,description,mcc_group) VALUES (3830,'YOTEL Singapore Orchard Road','SG Hotel');
 INSERT INTO mcc(mcc,description,mcc_group) VALUES (3831,'YOTELAIR Singapore Changi Airport','SG Hotel');
+INSERT INTO mcc(mcc,description,mcc_group) VALUES (4121,'Taxicabs and Limousines','General');

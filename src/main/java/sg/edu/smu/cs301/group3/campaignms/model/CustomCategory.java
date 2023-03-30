@@ -1,14 +1,12 @@
 package sg.edu.smu.cs301.group3.campaignms.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.util.Pair;
 
-import java.util.*;
+import java.util.List;
 
 @Data
 @Table(name = "custom_category")
@@ -24,7 +22,8 @@ public class CustomCategory {
 
     private String name;
 
-    @OneToMany(cascade = {CascadeType.REFRESH})
+    @OneToMany
+    @Column(unique = false)
     private List<Mcc> mccList;
 
     private String merchant;
