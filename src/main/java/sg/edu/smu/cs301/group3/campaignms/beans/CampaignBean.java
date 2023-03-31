@@ -32,8 +32,8 @@ public class CampaignBean {
     public static CampaignBean fromCampaignModel(Campaign campaign, List<Notification> notifications) {
         return CampaignBean.builder()
                 .title(campaign.getTitle())
-                .startDate(campaign.getStartDate().toString())
-                .endDate(campaign.getEndDate().toString())
+                .startDate(campaign.getStartDate()==null? "" : campaign.getStartDate().toString())
+                .endDate(campaign.getEndDate()==null? "": campaign.getEndDate().toString())
                 .mcc(campaign.getMerchant())
                 .minDollarSpent(campaign.getMinDollarSpent())
                 .pointsPerDollar(campaign.getRewardRate())

@@ -4,13 +4,15 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import sg.edu.smu.cs301.group3.campaignms.beans.RewardBean;
 import sg.edu.smu.cs301.group3.campaignms.beans.SpendBean;
+import sg.edu.smu.cs301.group3.campaignms.constants.DateHelper;
 import sg.edu.smu.cs301.group3.campaignms.model.Campaign;
 import sg.edu.smu.cs301.group3.campaignms.model.CardType;
 import sg.edu.smu.cs301.group3.campaignms.model.CustomCategory;
-import sg.edu.smu.cs301.group3.campaignms.model.Mcc;
 import sg.edu.smu.cs301.group3.campaignms.repository.CardTypeRepository;
 import sg.edu.smu.cs301.group3.campaignms.repository.MccExclusionRepository;
 
+import java.sql.Date;
+import java.text.ParseException;
 import java.util.*;
 
 import static sg.edu.smu.cs301.group3.campaignms.constants.Remarks.*;
@@ -31,8 +33,8 @@ public class SpendService {
 
     public List<RewardBean> convertToReward(SpendBean spendBean){
         List<RewardBean> list = new ArrayList<>();
-        Long cardId = spendBean.getCard_id();
-        Optional<CardType> cardType = cardTypeRepository.findById(cardId);
+        String cardTypeName = spendBean.getCardType();
+        Optional<CardType> cardType = cardTypeRepository.findByName(cardTypeName);
         if(cardType.isEmpty()){
             return null;
         }
@@ -119,11 +121,15 @@ public class SpendService {
         return list;
     }
 
-    private RewardBean createReward(SpendBean spendBean, double reward, String remarks){
-        return RewardBean.builder().tenant("SCIS").rewardAmount(reward).amount(spendBean.getAmount())
-                .transaction_date(spendBean.getTransaction_date()).transaction_id(spendBean.getTransaction_id())
-                .currency(spendBean.getCurrency()).merchant(spendBean.getMerchant()).card_id(spendBean.getCard_id())
-                .mcc(spendBean.getMcc()).remarks(remarks).build();
+    private RewardBean createReward(SpendBean spendBean, double reward, String remarks) {
+        try {
+            return RewardBean.builder().tenant("SCIS").rewardAmount(reward).amount(spendBean.getAmount())
+                    .transaction_date(new Date(DateHelper.spendDateFormat().parse(spendBean.getTransaction_date()).getTime())).transaction_id(spendBean.getTransaction_id())
+                    .currency(spendBean.getCurrency()).merchant(spendBean.getMerchant()).card_id(spendBean.getCard_id())
+                    .mcc(spendBean.getMcc()).remarks(remarks).build();
+        } catch (ParseException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     private RewardBean processBaseReward(SpendBean spendBean, Campaign campaign) {
