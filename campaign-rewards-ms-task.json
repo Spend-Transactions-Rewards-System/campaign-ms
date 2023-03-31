@@ -1,5 +1,5 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:ap-southeast-1:148484133023:task-definition/campaign-rewards-ms:27",
+    "taskDefinitionArn": "arn:aws:ecs:ap-southeast-1:148484133023:task-definition/campaign-rewards-ms:30",
     "containerDefinitions": [
         {
             "name": "campaign-rewards-ms-container",
@@ -15,30 +15,11 @@
                 }
             ],
             "essential": true,
-            "environment": [
+            "environment": [],
+            "environmentFiles": [
                 {
-                    "name": "DB_MYSQL_PASSWORD",
-                    "value": "adminadmin"
-                },
-                {
-                    "name": "JPA_DDL_CONFIG",
-                    "value": "none"
-                },
-                {
-                    "name": "DB_MYSQL_USERNAME",
-                    "value": "admin"
-                },
-                {
-                    "name": "AWS_ACCESS_KEY_ID",
-                    "value": "AKIASFESYCCP557OV6CY"
-                },
-                {
-                    "name": "DB_MYSQL_URL",
-                    "value": "jdbc:mysql://dev-card-ms.cbckat244yaq.ap-southeast-1.rds.amazonaws.com:3306/campaign_db?autoReconnect=true&useSSL=false"
-                },
-                {
-                    "name": "AWS_SECRET_ACCESS_KEY",
-                    "value": "IWOdztSiDynA6OP2hn7MhRBFEyQMnZZ1T+khP5SV"
+                    "value": "arn:aws:s3:::itsa-t3-ecs-environment-files/campaign-rewards-ms/.env",
+                    "type": "s3"
                 }
             ],
             "mountPoints": [],
@@ -58,7 +39,7 @@
     "taskRoleArn": "arn:aws:iam::148484133023:role/ECS-Role",
     "executionRoleArn": "arn:aws:iam::148484133023:role/ecsTaskExecutionRole",
     "networkMode": "awsvpc",
-    "revision": 27,
+    "revision": 30,
     "volumes": [],
     "status": "ACTIVE",
     "requiresAttributes": [
@@ -73,6 +54,9 @@
         },
         {
             "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
+        },
+        {
+            "name": "ecs.capability.env-files.s3"
         },
         {
             "name": "com.amazonaws.ecs.capability.task-iam-role"
@@ -104,6 +88,6 @@
     ],
     "cpu": "1024",
     "memory": "3072",
-    "registeredAt": "2023-03-31T00:27:27.759000+08:00",
+    "registeredAt": "2023-03-31T10:14:27.743000+08:00",
     "registeredBy": "arn:aws:iam::148484133023:user/itsag1t3"
 }
