@@ -13,11 +13,12 @@ import java.util.Map;
 
 @RestController
 @RequiredArgsConstructor
+@RequestMapping("/campaign")
 public class CampaignController {
 
     private final CampaignService campaignService;
     private final NotificationService notificationService;
-    @PostMapping("/campaign")
+    @PostMapping("/")
     public ResponseEntity<String> addCampaign(@RequestBody CampaignBean campaignBean) {
         try {
             Campaign savedCampaign = campaignService.addCampaign(campaignBean);
@@ -30,7 +31,7 @@ public class CampaignController {
         }
     }
 
-    @GetMapping("/campaign/{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<List<CampaignBean>> getCampaignByCardId(@PathVariable String id) {
         List<CampaignBean> campaignBeans = campaignService.getCampaignByCardId(Long.parseLong(id))
                 .stream().map(campaign -> CampaignBean.fromCampaignModel(campaign, notificationService
@@ -38,7 +39,7 @@ public class CampaignController {
         return ResponseEntity.ok(campaignBeans);
     }
 
-    @GetMapping("/campaign")
+    @GetMapping("/")
     public ResponseEntity<List<CampaignBean>> getAllCampaign() {
         List<CampaignBean> campaigns = campaignService.getAllCampaign()
                 .stream().map(campaign -> CampaignBean.fromCampaignModel(campaign, notificationService
@@ -46,7 +47,7 @@ public class CampaignController {
         return ResponseEntity.ok(campaigns);
     }
 
-    @PutMapping("/campaign/{id}")
+    @PutMapping("/{id}")
     public ResponseEntity<String> editCampaign(@PathVariable String id, @RequestBody CampaignBean campaignBean) {
         try {
             Campaign editCampaign = campaignService.editCampaign(campaignBean, Long.parseLong(id));
@@ -57,7 +58,7 @@ public class CampaignController {
         }
     }
 
-    @DeleteMapping("/campaign/{id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteCampaign(@PathVariable String id) {
         Campaign deletedCampaign = campaignService.deleteCampaign(Long.parseLong(id));
         notificationService.deleteNotificationsByCampaignId(Long.parseLong(id));
