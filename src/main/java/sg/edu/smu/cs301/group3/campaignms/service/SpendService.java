@@ -122,8 +122,8 @@ public class SpendService {
     private RewardBean createReward(SpendBean spendBean, double reward, String remarks) {
         try {
             return RewardBean.builder().tenant("SCIS").rewardAmount(reward).amount(spendBean.getAmount())
-                    .transaction_date(new Date(DateHelper.spendDateFormat().parse(spendBean.getTransaction_date()).getTime())).transaction_id(spendBean.getTransaction_id())
-                    .currency(spendBean.getCurrency()).merchant(spendBean.getMerchant()).card_id(spendBean.getCard_id())
+                    .transactionDate(new Date(DateHelper.spendDateFormat().parse(spendBean.getTransaction_date()).getTime())).transactionId(spendBean.getTransaction_id())
+                    .currency(spendBean.getCurrency()).merchant(spendBean.getMerchant()).cardId(spendBean.getCard_id())
                     .mcc(spendBean.getMcc()).remarks(remarks).build();
         } catch (ParseException e) {
             throw new RuntimeException(e);
