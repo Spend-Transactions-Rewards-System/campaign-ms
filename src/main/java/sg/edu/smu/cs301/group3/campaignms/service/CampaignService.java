@@ -2,6 +2,7 @@ package sg.edu.smu.cs301.group3.campaignms.service;
 
 import lombok.RequiredArgsConstructor;
 import org.quartz.*;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import sg.edu.smu.cs301.group3.campaignms.beans.CampaignBean;
 import sg.edu.smu.cs301.group3.campaignms.beans.SpendBean;
@@ -34,7 +35,8 @@ public class CampaignService {
 
     private final SimpleDateFormat formatter = new SimpleDateFormat(DATE_FORMAT, Locale.ENGLISH);
 
-    private final String cronFormat = "0 0 %d %d *";
+    @Value("${cron.campaign.expression}")
+    private String cronFormat;
 
     public List<Campaign> getAllCampaign() {
         List<Campaign> campaignList = campaignsRepository.findAll();
@@ -117,11 +119,13 @@ public class CampaignService {
         JobKey startCampaignJobKey = new JobKey(campaign.getCampaignId() + "-start");
         JobKey endCampaignJobKey = new JobKey(campaign.getCampaignId() + "-end");
         String startCampaignCron = String.format(cronFormat,
-                campaign.getStartDate().toLocalDate().getMonth().getValue(),
-                campaign.getStartDate().toLocalDate().getDayOfMonth());
+                campaign.getStartDate().toLocalDate().getDayOfMonth(),
+                campaign.getStartDate().toLocalDate().getMonth().toString(),
+                campaign.getStartDate().toLocalDate().getYear());
         String endCampaignCron = String.format(cronFormat,
-                campaign.getEndDate().toLocalDate().getMonth().getValue(),
-                campaign.getEndDate().toLocalDate().getDayOfMonth());
+                campaign.getEndDate().toLocalDate().getDayOfMonth(),
+                campaign.getEndDate().toLocalDate().getMonth().toString(),
+                campaign.getEndDate().toLocalDate().getYear());
         Trigger startCampaignTrigger = newTrigger().withSchedule(
                 cronSchedule(startCampaignCron)
                         .withMisfireHandlingInstructionFireAndProceed()
