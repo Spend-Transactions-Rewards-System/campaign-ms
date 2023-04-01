@@ -1,0 +1,93 @@
+{
+    "taskDefinitionArn": "arn:aws:ecs:ap-southeast-1:148484133023:task-definition/campaign-rewards-ms:30",
+    "containerDefinitions": [
+        {
+            "name": "campaign-rewards-ms-container",
+            "image": "148484133023.dkr.ecr.ap-southeast-1.amazonaws.com/campaign-rewards-ms:LATEST",
+            "cpu": 0,
+            "portMappings": [
+                {
+                    "containerPort": 8082,
+                    "hostPort": 8082,
+                    "protocol": "tcp",
+                    "name": "campaign-rewards-ms-container-8082-tcp",
+                    "appProtocol": "http"
+                }
+            ],
+            "essential": true,
+            "environment": [],
+            "environmentFiles": [
+                {
+                    "value": "arn:aws:s3:::itsa-t3-ecs-environment-files/campaign-rewards-ms/.env",
+                    "type": "s3"
+                }
+            ],
+            "mountPoints": [],
+            "volumesFrom": [],
+            "logConfiguration": {
+                "logDriver": "awslogs",
+                "options": {
+                    "awslogs-create-group": "true",
+                    "awslogs-group": "/ecs/campaign-rewards-ms",
+                    "awslogs-region": "ap-southeast-1",
+                    "awslogs-stream-prefix": "ecs"
+                }
+            }
+        }
+    ],
+    "family": "campaign-rewards-ms",
+    "taskRoleArn": "arn:aws:iam::148484133023:role/ECS-Role",
+    "executionRoleArn": "arn:aws:iam::148484133023:role/ecsTaskExecutionRole",
+    "networkMode": "awsvpc",
+    "revision": 30,
+    "volumes": [],
+    "status": "ACTIVE",
+    "requiresAttributes": [
+        {
+            "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
+        },
+        {
+            "name": "ecs.capability.execution-role-awslogs"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.ecr-auth"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
+        },
+        {
+            "name": "ecs.capability.env-files.s3"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.task-iam-role"
+        },
+        {
+            "name": "ecs.capability.execution-role-ecr-pull"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
+        },
+        {
+            "name": "ecs.capability.task-eni"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.29"
+        }
+    ],
+    "placementConstraints": [],
+    "compatibilities": [
+        "EC2",
+        "FARGATE"
+    ],
+    "runtimePlatform": {
+        "cpuArchitecture": "X86_64",
+        "operatingSystemFamily": "LINUX"
+    },
+    "requiresCompatibilities": [
+        "FARGATE"
+    ],
+    "cpu": "1024",
+    "memory": "3072",
+    "registeredAt": "2023-03-31T10:14:27.743000+08:00",
+    "registeredBy": "arn:aws:iam::148484133023:user/itsag1t3"
+}

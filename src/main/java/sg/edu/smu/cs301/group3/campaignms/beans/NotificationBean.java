@@ -5,12 +5,10 @@ import lombok.Data;
 
 @Data
 public class NotificationBean {
-    @JsonProperty("notification_title")
-    private String notificationTitle;
-
-    @JsonProperty("notification_message")
-    private String notificationMessage;
-
     @JsonProperty("campaign_id")
-    private int campaignId;
+    private Long campaignId;
+    @JsonProperty("user_email")
+    private String userEmail;
+    @JsonProperty("card_program_id")
+    private Long cardProgramId;
 }

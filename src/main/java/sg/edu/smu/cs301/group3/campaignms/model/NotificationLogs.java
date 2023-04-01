@@ -5,21 +5,28 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import sg.edu.smu.cs301.group3.campaignms.constants.Status;
 
 @Data
-@Table(name = "notification")
-@Builder
 @Entity
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class Notification {
+public class NotificationLogs {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    private Long notificationId;
-    private String message;
-    private String title;
-    private String platform;
+    private Long notificationLogsId;
 
-    @ManyToOne(cascade = {CascadeType.ALL})
-    private Campaign campaign;
+    @Enumerated(EnumType.STRING)
+    private Status status;
+
+    private String errorMessage;
+
+    private String message;
+
+    @ManyToOne
+    private Customer customer;
+
+    @ManyToOne
+    private Notification notification;
 }

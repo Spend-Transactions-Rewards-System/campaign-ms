@@ -1,0 +1,109 @@
+# This workflow will build a Java project with Maven, and cache/restore any dependencies to improve the workflow execution time
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-java-with-maven
+
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+
+name: Java CI with Maven
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: maven
+
+      - name: Build with Maven
+        run: mvn -B package --file pom.xml
+
+      - name: Run tests
+        run: mvn test
+
+  deploy:
+    needs: build
+    name: Deploy
+    runs-on: ubuntu-latest
+    environment: production
+    env:
+      AWS_REGION: ${{ vars.AWS_REGION }}                   # set this to your preferred AWS region, e.g. us-west-1
+      ECR_REPOSITORY: ${{ vars.ECR_REPOSITORY }}           # set this to your Amazon ECR repository name
+      ECS_SERVICE: ${{ vars.ECS_SERVICE }}                 # set this to your Amazon ECS service name
+      ECS_CLUSTER: ${{ vars.ECS_CLUSTER }}                 # set this to your Amazon ECS cluster name
+      ECS_TASK_DEFINITION: ${{ vars.ECS_TASK_DEFINITION }} # set this to the path to your Amazon ECS task definition
+      CONTAINER_NAME: ${{ vars.CONTAINER_NAME }}           # set this to the name of the container in the
+      JPA_DDL_CONFIG: ${{ vars.JPA_DDL_CONFIG }}
+      DB_MYSQL_URL: ${{ vars.DB_MYSQL_URL }}
+      DB_MYSQL_USERNAME: ${{ secrets.DB_MYSQL_USERNAME }}
+      DB_MYSQL_PASSWORD: ${{ secrets.DB_MYSQL_PASSWORD }}
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+    steps:
+      - name: Use variables
+        run: |
+          echo "aws region : ${{ env.AWS_REGION }}"
+          echo "ecs repository : ${{ env.ECR_REPOSITORY }}"
+          echo "ecs service : ${{ env.ECS_SERVICE }}"
+          echo "ecs cluster : ${{ env.ECS_CLUSTER }}"
+          echo "ecs task definition : ${{ env.ECS_TASK_DEFINITION }}"
+
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Login to Amazon ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v1
+
+      - name: Build, tag, and push image to Amazon ECR
+        id: build-image
+        env:
+          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+          IMAGE_TAG: LATEST
+        run: |
+          # Build a docker container and
+          # push it to ECR so that it can
+          # be deployed to ECS.
+          chmod +x mvnw
+          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
+          echo "Pushing image to ECR..."
+          docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+          echo "image=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG" >> $GITHUB_OUTPUT
+
+      - name: Fill in the new image ID in the Amazon ECS task definition
+        id: task-def
+        uses: aws-actions/amazon-ecs-render-task-definition@v1
+        with:
+          task-definition: campaign-rewards-ms-task.json
+          container-name: campaign-rewards-ms-container
+          image: ${{ steps.build-image.outputs.image }}
+
+      - name: Deploy Amazon ECS task definition
+        uses: aws-actions/amazon-ecs-deploy-task-definition@v1
+        with:
+          task-definition: ${{ steps.task-def.outputs.task-definition }}
+          service: service-campaign-rewards-ms
+          cluster: ITSA-ecs-cluster
+          wait-for-service-stability: true

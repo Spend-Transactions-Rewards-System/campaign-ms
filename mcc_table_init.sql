@@ -1,0 +1,1 @@
+create table mcc (id integer not null, description varchar(255), mcc_group varchar(255), primary key (id))
