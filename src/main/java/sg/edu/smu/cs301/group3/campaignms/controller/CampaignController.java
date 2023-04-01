@@ -11,14 +11,16 @@ import sg.edu.smu.cs301.group3.campaignms.service.NotificationService;
 import java.util.List;
 import java.util.Map;
 
+
 @RestController
+@RequestMapping("/campaign/campaigns")
 @RequiredArgsConstructor
-@RequestMapping("/campaign")
 public class CampaignController {
 
     private final CampaignService campaignService;
     private final NotificationService notificationService;
-    @PostMapping("/")
+
+    @PostMapping()
     public ResponseEntity<String> addCampaign(@RequestBody CampaignBean campaignBean) {
         try {
             Campaign savedCampaign = campaignService.addCampaign(campaignBean);
@@ -39,11 +41,13 @@ public class CampaignController {
         return ResponseEntity.ok(campaignBeans);
     }
 
-    @GetMapping("/")
+    @GetMapping()
     public ResponseEntity<List<CampaignBean>> getAllCampaign() {
         List<CampaignBean> campaigns = campaignService.getAllCampaign()
                 .stream().map(campaign -> CampaignBean.fromCampaignModel(campaign, notificationService
                         .getNotificationsByCampaignId(campaign.getCampaignId()))).toList();
+
+
         return ResponseEntity.ok(campaigns);
     }
 
