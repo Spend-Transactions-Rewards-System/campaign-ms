@@ -193,7 +193,7 @@ public class SpendService {
     }
 
     private RewardBean processMerchantSpendReward(SpendBean spendBean, Campaign campaign) {
-        if(spendBean.getMerchant().contains(campaign.getMerchant())) {
+        if(spendBean.getMerchant().toLowerCase().contains(campaign.getMerchant().toLowerCase())) {
             return createReward(spendBean, campaignService.computeReward(campaign, spendBean),
                     remarksFactory(campaign));
         }
