@@ -2,26 +2,26 @@ package sg.edu.smu.cs301.group3.campaignms.service;
 
 import lombok.RequiredArgsConstructor;
 import org.quartz.*;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import sg.edu.smu.cs301.group3.campaignms.beans.CampaignBean;
-import sg.edu.smu.cs301.group3.campaignms.jobs.CampaignJob;
 import sg.edu.smu.cs301.group3.campaignms.beans.SpendBean;
+import sg.edu.smu.cs301.group3.campaignms.jobs.CampaignJob;
 import sg.edu.smu.cs301.group3.campaignms.model.Campaign;
 import sg.edu.smu.cs301.group3.campaignms.model.CardType;
 import sg.edu.smu.cs301.group3.campaignms.repository.CampaignsRepository;
 import sg.edu.smu.cs301.group3.campaignms.repository.CardTypeRepository;
 
-import java.sql.Timestamp;
-import java.util.*;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
+import java.util.TimeZone;
+import java.util.stream.Collectors;
 
 import static org.quartz.CronScheduleBuilder.cronSchedule;
 import static org.quartz.JobBuilder.newJob;
 import static org.quartz.TriggerBuilder.newTrigger;
-import java.util.stream.Collectors;
-
 import static sg.edu.smu.cs301.group3.campaignms.constants.DateHelper.DATE_FORMAT;
 
 @Service
@@ -117,11 +117,11 @@ public class CampaignService {
         JobKey startCampaignJobKey = new JobKey(campaign.getCampaignId() + "-start");
         JobKey endCampaignJobKey = new JobKey(campaign.getCampaignId() + "-end");
         String startCampaignCron = String.format(cronFormat,
-                campaign.getStartDate().toLocalDateTime().getMonth().getValue(),
-                campaign.getStartDate().toLocalDateTime().getDayOfMonth());
+                campaign.getStartDate().toLocalDate().getMonth().getValue(),
+                campaign.getStartDate().toLocalDate().getDayOfMonth());
         String endCampaignCron = String.format(cronFormat,
-                campaign.getEndDate().toLocalDateTime().getMonth().getValue(),
-                campaign.getEndDate().toLocalDateTime().getDayOfMonth());
+                campaign.getEndDate().toLocalDate().getMonth().getValue(),
+                campaign.getEndDate().toLocalDate().getDayOfMonth());
         Trigger startCampaignTrigger = newTrigger().withSchedule(
                 cronSchedule(startCampaignCron)
                         .withMisfireHandlingInstructionFireAndProceed()
