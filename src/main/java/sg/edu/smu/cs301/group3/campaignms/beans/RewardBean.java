@@ -10,11 +10,11 @@ import java.sql.Date;
 public class RewardBean {
     private String tenant;
 
-    private String transaction_id;
+    private String transactionId;
 
-    private Date transaction_date;
+    private Date transactionDate;
 
-    private String card_id;
+    private String cardId;
 
     private String merchant;
 
