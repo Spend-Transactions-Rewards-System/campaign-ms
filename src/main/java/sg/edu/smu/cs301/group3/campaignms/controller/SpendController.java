@@ -27,7 +27,10 @@ public class SpendController {
     private String campaignToCardQueueUrl;
 
     public void sendMessage(List<RewardBean> reward){
-        queueMessagingTemplate.send(campaignToCardQueueUrl, MessageBuilder.withPayload(reward).build());
+
+        reward.stream().forEach(rewardBean ->  queueMessagingTemplate.send(campaignToCardQueueUrl, MessageBuilder.withPayload(rewardBean).build()));
+
+
     }
 
     @PostMapping ("/spends")
