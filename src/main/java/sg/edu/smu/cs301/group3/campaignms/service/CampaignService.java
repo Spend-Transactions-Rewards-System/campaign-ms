@@ -13,6 +13,7 @@ import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.Locale;
+import java.util.stream.Collectors;
 
 import static sg.edu.smu.cs301.group3.campaignms.constants.DateHelper.DATE_FORMAT;
 
@@ -25,7 +26,9 @@ public class CampaignService {
     private final SimpleDateFormat formatter = new SimpleDateFormat(DATE_FORMAT, Locale.ENGLISH);
 
     public List<Campaign> getAllCampaign() {
-        return campaignsRepository.findAll();
+        List<Campaign> campaignList = campaignsRepository.findAll();
+
+        return filterOnlyCampaign(campaignList);
     }
 
     public List<Campaign> getCampaignByCardId(Long id) {
@@ -33,7 +36,9 @@ public class CampaignService {
         CardType cardType = cardTypeRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException(id + " not found"));
 
-        return campaignsRepository.getCampaignsByCardType(cardType);
+        List<Campaign> campaignList = campaignsRepository.getCampaignsByCardType(cardType);
+
+        return filterOnlyCampaign(campaignList);
     }
 
     public Campaign getCampaignByCampaignId(Long id) {
@@ -99,6 +104,12 @@ public class CampaignService {
 
         return spendBean.getCardType().contains("Shopping") ? Math.floor(campaign.getRewardRate() * spendBean.getAmount()) :
                 campaign.getRewardRate() * spendBean.getAmount();
+    }
+
+    private List<Campaign> filterOnlyCampaign(List<Campaign> campaignList) {
+        return campaignList.stream().filter(campaign -> !(campaign.getTitle().equalsIgnoreCase("base") ||
+                campaign.getTitle().equalsIgnoreCase("category")
+                        && campaign.getStartDate() == null)).collect(Collectors.toList());
     }
 
 
