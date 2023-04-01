@@ -61,7 +61,7 @@ public class SpendService {
                 }
             }
 
-            if(rule.getCustomCategoryName() != null || !rule.getCustomCategoryName().isEmpty()) {
+            if(rule.getCustomCategoryName() != null) {
                 rewardBean = processCustomCategory(spendBean, rule);
                 if(rewardBean!= null) {
                     list.add(rewardBean);
@@ -84,8 +84,7 @@ public class SpendService {
 
         //process Category Rule
         for (Campaign categoryRule: categoryList) {
-            if(categoryRule.getCustomCategoryName() != null ||
-                    !categoryRule.getCustomCategoryName().isEmpty() &&
+            if(categoryRule.getCustomCategoryName() != null &&
                         categoryRule.isForeign()) {
                 rewardBean = processCustomCategoryWithIsForeign(spendBean, categoryRule);
                 if(rewardBean!= null) {
@@ -94,8 +93,7 @@ public class SpendService {
                 }
             }
 
-            if(categoryRule.getCustomCategoryName() != null ||
-                    !categoryRule.getCustomCategoryName().isEmpty()) {
+            if(categoryRule.getCustomCategoryName() != null) {
                 rewardBean = processCustomCategory(spendBean, categoryRule);
                 if(rewardBean!= null) {
                     list.add(rewardBean);
@@ -195,7 +193,7 @@ public class SpendService {
     }
 
     private RewardBean processMerchantSpendReward(SpendBean spendBean, Campaign campaign) {
-        if(spendBean.getMerchant().equalsIgnoreCase(campaign.getMerchant())) {
+        if(spendBean.getMerchant().contains(campaign.getMerchant())) {
             return createReward(spendBean, campaignService.computeReward(campaign, spendBean),
                     remarksFactory(campaign));
         }
