@@ -5,7 +5,9 @@ import com.amazonaws.services.simpleemail.AmazonSimpleEmailService;
 import com.amazonaws.services.simpleemail.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import sg.edu.smu.cs301.group3.campaignms.constants.Status;
 import sg.edu.smu.cs301.group3.campaignms.model.Notification;
+import sg.edu.smu.cs301.group3.campaignms.model.NotificationLogs;
 
 
 @Service
@@ -16,6 +18,9 @@ public class EmailService {
 
     @Autowired
     private AmazonSimpleEmailService amazonSimpleEmailService;
+
+    @Autowired
+    private NotificationLogsService notificationLogsService;
 
     public SdkHttpMetadata send(Notification notification, String userEmail) {
 
@@ -29,7 +34,26 @@ public class EmailService {
 
         SendEmailResult response = amazonSimpleEmailService.sendEmail(request);
 
+        logEmailNotification(response);
+
         return response.getSdkHttpMetadata();
+    }
+
+    private void logEmailNotification(SendEmailResult sendEmailResponse) {
+        int statusCode = sendEmailResponse.getSdkHttpMetadata().getHttpStatusCode();
+        if (statusCode >= 200 && statusCode < 300) {
+            notificationLogsService.createNotificationLogs(NotificationLogs
+                    .builder()
+                    .status(Status.SUCCESS)
+                    .build());
+        } else {
+            notificationLogsService.createNotificationLogs(NotificationLogs
+                        .builder()
+                        .status(Status.DROPPED)
+                        .errorMessage(sendEmailResponse.getSdkHttpMetadata().toString())
+                        .build()
+            );
+        }
     }
 
 }
