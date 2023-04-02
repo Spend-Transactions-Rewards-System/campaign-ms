@@ -123,7 +123,8 @@ public class SpendService {
         try {
             return RewardBean.builder().tenant("SCIS").rewardAmount(reward).amount(spendBean.getAmount())
                     .transactionDate(new Date(DateHelper.spendDateFormat().parse(spendBean.getTransaction_date()).getTime())).transactionId(spendBean.getTransaction_id())
-                    .currency(spendBean.getCurrency()).merchant(spendBean.getMerchant()).cardId(spendBean.getCard_id())
+                    .currency(spendBean.getCurrency()).merchant(spendBean.getMerchant())
+                    .cardId(spendBean.getCard_id())
                     .mcc(spendBean.getMcc()).remarks(remarks).build();
         } catch (ParseException e) {
             throw new RuntimeException(e);
@@ -222,12 +223,23 @@ public class SpendService {
 
     private String remarksFactory(Campaign campaign) {
         if(campaign.getTitle().equalsIgnoreCase("base")) {
-            return BASE + " " + campaign.getRewardRate();
+            return BASE + getRewardRateDescription(campaign);
         } else if (campaign.getTitle().equalsIgnoreCase("category")) {
-            return CATEGORY + " " + campaign.getRewardRate();
+            return CATEGORY + getRewardRateDescription(campaign);
         } else {
-            return CAMPAIGN + " " + campaign.getRewardRate();
+            return CAMPAIGN + getRewardRateDescription(campaign);
         }
+    }
+
+    private String getRewardRateDescription(Campaign campaign){
+
+        Double rate = campaign.getRewardRate();
+
+        if(campaign.getCardType().getName().equalsIgnoreCase("scis_freedom")) {
+            rate *= 100;
+        }
+
+        return String.format(" giving %.2f %s /SGD spend", rate, campaign.getCardType().getRewardUnit());
     }
 
     public void buildCampaignBuckets(List<Campaign> rawCampaignList, List<Campaign> baseList, List<Campaign> categoryList, List<Campaign> campaignList) {

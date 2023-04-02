@@ -25,4 +25,20 @@ public class CardType {
     @JsonIgnore
     @OneToMany(mappedBy = "cardType", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Campaign> campaignList;
+
+    public String getRewardUnit() {
+        if(name.equalsIgnoreCase("scis_premiummiles") || name.equalsIgnoreCase("scis_platinummiles")) {
+            return "miles";
+        }
+
+        if(name.equalsIgnoreCase("scis_shopping")) {
+            return "points";
+        }
+
+        if(name.equalsIgnoreCase("scis_freedom")) {
+            return "percent";
+        }
+
+        return "";
+    }
 }
