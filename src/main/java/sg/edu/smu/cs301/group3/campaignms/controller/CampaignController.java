@@ -24,12 +24,13 @@ public class CampaignController {
     public ResponseEntity<String> addCampaign(@RequestBody CampaignBean campaignBean) {
         try {
             Campaign savedCampaign = campaignService.addCampaign(campaignBean);
+            campaignService.createCampaignJob(savedCampaign);
             notificationService.addNotificationsInBulk(campaignBean.getCampaignNotificationBeanList(),
                     savedCampaign.getCampaignId());
             return ResponseEntity.ok("success");
         } catch (Exception e) {
             e.printStackTrace();
-            return ResponseEntity.ok("error");
+            return ResponseEntity.ok(e.toString());
         }
     }
 
