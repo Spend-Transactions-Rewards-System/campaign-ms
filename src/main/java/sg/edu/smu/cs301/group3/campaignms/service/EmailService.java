@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import sg.edu.smu.cs301.group3.campaignms.beans.CampaignBonusAlertBean;
 import sg.edu.smu.cs301.group3.campaignms.constants.Status;
+import sg.edu.smu.cs301.group3.campaignms.model.CardType;
 import sg.edu.smu.cs301.group3.campaignms.model.Customer;
 import sg.edu.smu.cs301.group3.campaignms.model.Notification;
 import sg.edu.smu.cs301.group3.campaignms.model.NotificationLogs;
@@ -50,11 +51,17 @@ public class EmailService {
 
         StringBuilder sb = new StringBuilder();
         sb.append(String.format("Dear %s, %n%n", customer.getName()));
-        sb.append(String.format("Thank you for using your %s card. %n%n", campaignBonusAlertBean.getCardType()));
-        sb.append(String.format("We are pleased to update that you have been awarded a bonus of %.2f as you have fulfilled our %s ", campaignBonusAlertBean.getRewardAmount(), campaignBonusAlertBean.getRemarks()));
+
+        sb.append(String.format("Thank you for using your %s card on %s. %n%n", campaignBonusAlertBean.getCardType(), campaignBonusAlertBean.getSpendDate()));
+
+        sb.append(String.format("We are pleased to update that you have been awarded a bonus of %.2f %s as you have fulfilled our %s ",
+                campaignBonusAlertBean.getRewardAmount()
+                , new CardType(null, campaignBonusAlertBean.getCardType(), "scis", null).getRewardUnit()
+                , campaignBonusAlertBean.getRemarks()));
+
         sb.append(String.format("on your spend of %s %.2f at %s", campaignBonusAlertBean.getCurrency(), campaignBonusAlertBean.getAmount(), campaignBonusAlertBean.getMerchant()));
 
-        logger.info("EMAIL SENT: " + sb.toString());
+        logger.info("EMAIL SENT: \n" + sb.toString());
 
         SendEmailRequest request = new SendEmailRequest()
                 .withMessage(new Message()
