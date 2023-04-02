@@ -15,28 +15,29 @@ import software.amazon.awssdk.services.sqs.SqsAsyncClient;
 @Configuration
 public class SQSConfig {
 
-    @Bean
-    public SqsMessageListenerContainerFactory<Object> defaultSqsListenerContainerFactory() {
-        return SqsMessageListenerContainerFactory
-                .builder()
-                .sqsAsyncClient(sqsAsyncClient())
-                .build();
-    }
+    //Some possible implementation if required any customization for SQS
+//    @Bean
+//    public SqsMessageListenerContainerFactory<Object> defaultSqsListenerContainerFactory() {
+//        return SqsMessageListenerContainerFactory
+//                .builder()
+//                .sqsAsyncClient(sqsAsyncClient())
+//                .build();
+//    }
+//
+//    @Bean
+//    public SqsProperties.Listener listener() {
+//        return new SqsProperties.Listener();
+//    }
+
 
     @Bean
     public SqsAsyncClient sqsAsyncClient() {
         return SqsAsyncClient.builder().build();
     }
 
-    @Bean
-    public SqsProperties.Listener listener() {
-        return new SqsProperties.Listener();
-    }
-
-
     @Primary
     @Bean
-    public SqsOperations sqsAsyncOperations() {
+    public SqsOperations sqsOperations() {
         return SqsTemplate.builder()
                 .sqsAsyncClient(sqsAsyncClient())
                 .configureDefaultConverter(sqsMessagingMessageConverter -> {
