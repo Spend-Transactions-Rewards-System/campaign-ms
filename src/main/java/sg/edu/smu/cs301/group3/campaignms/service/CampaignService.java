@@ -14,10 +14,7 @@ import sg.edu.smu.cs301.group3.campaignms.repository.CardTypeRepository;
 
 import java.sql.Date;
 import java.text.SimpleDateFormat;
-import java.util.List;
-import java.util.Locale;
-import java.util.Map;
-import java.util.TimeZone;
+import java.util.*;
 import java.util.stream.Collectors;
 
 import static org.quartz.CronScheduleBuilder.cronSchedule;
@@ -61,35 +58,38 @@ public class CampaignService {
     public Campaign addCampaign(CampaignBean campaignBean) throws Exception {
 
         CardType cardType = cardTypeRepository.findById(campaignBean.getCardProgramId())
-                .orElseThrow(() -> new RuntimeException(campaignBean.getCardProgramId() + " not found"));
+                .orElseThrow(() -> new RuntimeException("Card program Id: " + campaignBean.getCardProgramId() + " not found"));
 
-        Date startDate = (Date) formatter.parse(campaignBean.getStartDate());
-        Date endDate = (Date) formatter.parse(campaignBean.getEndDate());
+        java.sql.Date startDate = new java.sql.Date(formatter.parse(campaignBean.getStartDate()).getTime());
+        java.sql.Date endDate = new java.sql.Date(formatter.parse(campaignBean.getEndDate()).getTime());
         Campaign campaign = Campaign
                 .builder()
                 .title(campaignBean.getTitle())
-                .startDate(new Date(startDate.getTime()))
-                .endDate(new Date(endDate.getTime()))
+                .startDate(startDate)
+                .endDate(endDate)
                 .merchant(campaignBean.getMcc())
                 .minDollarSpent(campaignBean.getMinDollarSpent())
                 .rewardRate(campaignBean.getPointsPerDollar())
                 .cardType(cardType)
                 .build();
         campaign.setActive(withinCampaignPeriod(campaign));
-        createJob(campaign);
         return campaignsRepository.save(campaign);
+    }
+
+    public void createCampaignJob(Campaign campaign) throws SchedulerException {
+        createJob(campaign);
     }
 
     public Campaign editCampaign(CampaignBean campaignBean, Long campaignId) throws Exception {
         Campaign retrievedCampaign = campaignsRepository.getCampaignByCampaignId(campaignId);
-        Date startDate = (Date) formatter.parse(campaignBean.getStartDate());
-        Date endDate = (Date) formatter.parse(campaignBean.getEndDate());
+        java.sql.Date startDate = new java.sql.Date(formatter.parse(campaignBean.getStartDate()).getTime());
+        java.sql.Date endDate = new java.sql.Date(formatter.parse(campaignBean.getEndDate()).getTime());
         if (retrievedCampaign == null) {
             throw new Exception("Campaign not found");
         }
         retrievedCampaign.setTitle(campaignBean.getTitle());
-        retrievedCampaign.setStartDate(new Date(startDate.getTime()));
-        retrievedCampaign.setEndDate(new Date(endDate.getTime()));
+        retrievedCampaign.setStartDate(startDate);
+        retrievedCampaign.setEndDate(endDate);
         retrievedCampaign.setMerchant(campaignBean.getMcc());
         retrievedCampaign.setMinDollarSpent(campaignBean.getMinDollarSpent());
         retrievedCampaign.setRewardRate(campaignBean.getPointsPerDollar());

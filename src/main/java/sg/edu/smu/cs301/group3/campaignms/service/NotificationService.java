@@ -30,7 +30,6 @@ public class NotificationService {
                     .platform("email")
                     .build();
 
-            System.out.println(notification);
             return notificationsRepository.save(notification);
         }).collect(Collectors.toList());
     }
