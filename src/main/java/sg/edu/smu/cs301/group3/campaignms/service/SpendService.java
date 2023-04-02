@@ -61,7 +61,7 @@ public class SpendService {
                 }
             }
 
-            if(rule.getCustomCategoryName() != null || !rule.getCustomCategoryName().isEmpty()) {
+            if(rule.getCustomCategoryName() != null) {
                 rewardBean = processCustomCategory(spendBean, rule);
                 if(rewardBean!= null) {
                     list.add(rewardBean);
@@ -84,8 +84,7 @@ public class SpendService {
 
         //process Category Rule
         for (Campaign categoryRule: categoryList) {
-            if(categoryRule.getCustomCategoryName() != null ||
-                    !categoryRule.getCustomCategoryName().isEmpty() &&
+            if(categoryRule.getCustomCategoryName() != null &&
                         categoryRule.isForeign()) {
                 rewardBean = processCustomCategoryWithIsForeign(spendBean, categoryRule);
                 if(rewardBean!= null) {
@@ -94,8 +93,7 @@ public class SpendService {
                 }
             }
 
-            if(categoryRule.getCustomCategoryName() != null ||
-                    !categoryRule.getCustomCategoryName().isEmpty()) {
+            if(categoryRule.getCustomCategoryName() != null) {
                 rewardBean = processCustomCategory(spendBean, categoryRule);
                 if(rewardBean!= null) {
                     list.add(rewardBean);
@@ -124,8 +122,9 @@ public class SpendService {
     private RewardBean createReward(SpendBean spendBean, double reward, String remarks) {
         try {
             return RewardBean.builder().tenant("SCIS").rewardAmount(reward).amount(spendBean.getAmount())
-                    .transaction_date(new Date(DateHelper.spendDateFormat().parse(spendBean.getTransaction_date()).getTime())).transaction_id(spendBean.getTransaction_id())
-                    .currency(spendBean.getCurrency()).merchant(spendBean.getMerchant()).card_id(spendBean.getCard_id())
+                    .transactionDate(new Date(DateHelper.spendDateFormat().parse(spendBean.getTransaction_date()).getTime())).transactionId(spendBean.getTransaction_id())
+                    .currency(spendBean.getCurrency()).merchant(spendBean.getMerchant())
+                    .cardId(spendBean.getCard_id())
                     .mcc(spendBean.getMcc()).remarks(remarks).build();
         } catch (ParseException e) {
             throw new RuntimeException(e);
@@ -195,7 +194,7 @@ public class SpendService {
     }
 
     private RewardBean processMerchantSpendReward(SpendBean spendBean, Campaign campaign) {
-        if(spendBean.getMerchant().equalsIgnoreCase(campaign.getMerchant())) {
+        if(spendBean.getMerchant().toLowerCase().contains(campaign.getMerchant().toLowerCase())) {
             return createReward(spendBean, campaignService.computeReward(campaign, spendBean),
                     remarksFactory(campaign));
         }
@@ -224,12 +223,23 @@ public class SpendService {
 
     private String remarksFactory(Campaign campaign) {
         if(campaign.getTitle().equalsIgnoreCase("base")) {
-            return BASE + " " + campaign.getRewardRate();
+            return BASE + getRewardRateDescription(campaign);
         } else if (campaign.getTitle().equalsIgnoreCase("category")) {
-            return CATEGORY + " " + campaign.getRewardRate();
+            return CATEGORY + getRewardRateDescription(campaign);
         } else {
-            return CAMPAIGN + " " + campaign.getRewardRate();
+            return CAMPAIGN + getRewardRateDescription(campaign);
         }
+    }
+
+    private String getRewardRateDescription(Campaign campaign){
+
+        Double rate = campaign.getRewardRate();
+
+        if(campaign.getCardType().getName().equalsIgnoreCase("scis_freedom")) {
+            rate *= 100;
+        }
+
+        return String.format(" giving %.2f %s /SGD spend", rate, campaign.getCardType().getRewardUnit());
     }
 
     public void buildCampaignBuckets(List<Campaign> rawCampaignList, List<Campaign> baseList, List<Campaign> categoryList, List<Campaign> campaignList) {

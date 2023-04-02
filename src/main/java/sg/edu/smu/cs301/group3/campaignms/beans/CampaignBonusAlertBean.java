@@ -3,28 +3,16 @@ package sg.edu.smu.cs301.group3.campaignms.beans;
 import lombok.Builder;
 import lombok.Data;
 
-import java.sql.Date;
-
 @Data
 @Builder
-public class RewardBean {
-    private String tenant;
-
-    private String transactionId;
-
-    private Date transactionDate;
-
-    private String cardId;
-
+public class CampaignBonusAlertBean {
+    private String email;
+    private String spendDate;
     private String merchant;
-
-    private int mcc;
-
+    private String cardType;
     private String currency;
-
     private double amount;
-
     private double rewardAmount;
-
+    private double balance;
     private String remarks;
 }

@@ -1,6 +1,6 @@
 package sg.edu.smu.cs301.group3.campaignms.controller;
 
-import io.awspring.cloud.sqs.operations.SqsTemplate;
+import io.awspring.cloud.sqs.operations.SqsOperations;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
@@ -21,13 +21,16 @@ import java.util.List;
 public class SpendController {
 
     private final SpendService spendService;
-    private final SqsTemplate queueMessagingTemplate;
+    private final SqsOperations queueMessagingTemplate;
 
     @Value("${aws.campaign.to.card.queue.url}")
     private String campaignToCardQueueUrl;
 
     public void sendMessage(List<RewardBean> reward){
-        queueMessagingTemplate.send(campaignToCardQueueUrl, MessageBuilder.withPayload(reward).build());
+
+        reward.stream().forEach(rewardBean ->  queueMessagingTemplate.send(campaignToCardQueueUrl, MessageBuilder.withPayload(rewardBean).build()));
+
+
     }
 
     @PostMapping ("/spends")
