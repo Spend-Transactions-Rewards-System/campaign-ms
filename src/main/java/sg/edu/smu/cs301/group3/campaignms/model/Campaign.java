@@ -2,15 +2,13 @@ package sg.edu.smu.cs301.group3.campaignms.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 
 import java.sql.Date;
 
-@Data
+@Getter
+@Setter
 @Table(name = "campaign")
 @Builder
 @Entity

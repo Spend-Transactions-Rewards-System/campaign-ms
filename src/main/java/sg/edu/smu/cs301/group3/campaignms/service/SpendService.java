@@ -239,7 +239,7 @@ public class SpendService {
             rate *= 100;
         }
 
-        return String.format(" giving %.2f %s /SGD spend", rate, campaign.getCardType().getRewardUnit());
+        return String.format(" giving %.2f %s/SGD", rate, campaign.getCardType().getRewardUnit());
     }
 
     public void buildCampaignBuckets(List<Campaign> rawCampaignList, List<Campaign> baseList, List<Campaign> categoryList, List<Campaign> campaignList) {
