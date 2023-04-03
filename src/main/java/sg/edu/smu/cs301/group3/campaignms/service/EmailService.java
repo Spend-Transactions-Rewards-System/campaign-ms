@@ -59,7 +59,9 @@ public class EmailService {
                 , new CardType(null, campaignBonusAlertBean.getCardType(), "scis", null).getRewardUnit()
                 , campaignBonusAlertBean.getRemarks()));
 
-        sb.append(String.format("on your spend of %s %.2f at %s", campaignBonusAlertBean.getCurrency(), campaignBonusAlertBean.getAmount(), campaignBonusAlertBean.getMerchant()));
+        sb.append(String.format("on your spend of %s %.2f at %s.", campaignBonusAlertBean.getCurrency(), campaignBonusAlertBean.getAmount(), campaignBonusAlertBean.getMerchant()));
+
+        sb.append("\n\nThank you for choosing SCIS Bank.");
 
         logger.info("EMAIL SENT: \n" + sb.toString());
 
@@ -71,11 +73,11 @@ public class EmailService {
                 .withSource(String.format("%s <%s>", FROM_NAME, FROM_EMAIL))
                 .withDestination(new Destination().withToAddresses(campaignBonusAlertBean.getEmail()));
 
-//        SendEmailResult response = amazonSimpleEmailService.sendEmail(request);
-//
-//        logEmailNotification(response);
-//
-//        return response.getSdkHttpMetadata();
+        SendEmailResult response = amazonSimpleEmailService.sendEmail(request);
+
+        logEmailNotification(response);
+
+        logger.info("EMAIL SENT with STATUS: " + response.getSdkHttpMetadata().toString());
     }
 
 
