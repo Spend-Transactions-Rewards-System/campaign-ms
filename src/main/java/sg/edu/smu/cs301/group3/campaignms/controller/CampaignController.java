@@ -47,13 +47,13 @@ public class CampaignController {
     }
 
     @GetMapping()
-    public ResponseEntity<String> getAllCampaign() {
+    public ResponseEntity<Object> getAllCampaign() {
         try {
             List<CampaignBean> campaigns = campaignService.getAllCampaign()
                     .stream().map(campaign -> CampaignBean.fromCampaignModel(campaign, notificationService
                             .getNotificationsByCampaignId(campaign.getCampaignId()))).toList();
 
-            return ResponseEntity.ok(campaigns.toString());
+            return ResponseEntity.ok(campaigns);
         } catch (Exception e) {
             return ResponseEntity.status(500).body(e.toString());
         }
