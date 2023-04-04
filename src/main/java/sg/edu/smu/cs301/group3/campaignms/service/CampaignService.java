@@ -150,11 +150,12 @@ public class CampaignService {
     public double computeReward(Campaign campaign, SpendBean spendBean){
 
         if(spendBean.getCurrency().equalsIgnoreCase("USD")) {
-            return campaign.getRewardRate() * spendBean.getAmount() * 1.35;
+            return campaign.getRewardRate() * Math.floor(spendBean.getAmount() * 1.35);
         }
 
-        return spendBean.getCardType().contains("Shopping") ? Math.floor(campaign.getRewardRate() * spendBean.getAmount()) :
-                campaign.getRewardRate() * spendBean.getAmount();
+        return spendBean.getCardType().contains("Shopping")
+                ? Math.floor(campaign.getRewardRate() * Math.floor(spendBean.getAmount()))
+                : campaign.getRewardRate() * Math.floor(spendBean.getAmount());
     }
 
     private List<Campaign> filterOnlyCampaign(List<Campaign> campaignList) {
