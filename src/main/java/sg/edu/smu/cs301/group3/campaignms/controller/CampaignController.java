@@ -30,43 +30,54 @@ public class CampaignController {
             return ResponseEntity.ok("success");
         } catch (Exception e) {
             e.printStackTrace();
-            return ResponseEntity.ok(e.toString());
+            return ResponseEntity.status(500).body(e.toString());
         }
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<List<CampaignBean>> getCampaignByCardId(@PathVariable String id) {
-        List<CampaignBean> campaignBeans = campaignService.getCampaignByCardId(Long.parseLong(id))
-                .stream().map(campaign -> CampaignBean.fromCampaignModel(campaign, notificationService
-                        .getNotificationsByCampaignId(campaign.getCampaignId()))).toList();
-        return ResponseEntity.ok(campaignBeans);
+    public ResponseEntity<Object> getCampaignByCardId(@PathVariable String id) {
+        try {
+            List<CampaignBean> campaignBeans = campaignService.getCampaignByCardId(Long.parseLong(id))
+                    .stream().map(campaign -> CampaignBean.fromCampaignModel(campaign, notificationService
+                            .getNotificationsByCampaignId(campaign.getCampaignId()))).toList();
+            return ResponseEntity.ok(campaignBeans);
+        } catch (Exception e) {
+            return ResponseEntity.status(500).body(e.toString());
+        }
     }
 
     @GetMapping()
-    public ResponseEntity<List<CampaignBean>> getAllCampaign() {
-        List<CampaignBean> campaigns = campaignService.getAllCampaign()
-                .stream().map(campaign -> CampaignBean.fromCampaignModel(campaign, notificationService
-                        .getNotificationsByCampaignId(campaign.getCampaignId()))).toList();
+    public ResponseEntity<Object> getAllCampaign() {
+        try {
+            List<CampaignBean> campaigns = campaignService.getAllCampaign()
+                    .stream().map(campaign -> CampaignBean.fromCampaignModel(campaign, notificationService
+                            .getNotificationsByCampaignId(campaign.getCampaignId()))).toList();
 
-
-        return ResponseEntity.ok(campaigns);
+            return ResponseEntity.ok(campaigns);
+        } catch (Exception e) {
+            return ResponseEntity.status(500).body(e.toString());
+        }
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<String> editCampaign(@PathVariable String id, @RequestBody CampaignBean campaignBean) {
+    public ResponseEntity<Object> editCampaign(@PathVariable String id, @RequestBody CampaignBean campaignBean) {
         try {
             Campaign editCampaign = campaignService.editCampaign(campaignBean, Long.parseLong(id));
             return ResponseEntity.ok(Map.of("campaign", editCampaign).toString());
         } catch (Exception e) {
             e.printStackTrace();
-            return ResponseEntity.ok("error");
+            return ResponseEntity.status(500).body(e.toString());
         }
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<String> deleteCampaign(@PathVariable String id) {
-        Campaign deletedCampaign = campaignService.deleteCampaign(Long.parseLong(id));
-        notificationService.deleteNotificationsByCampaignId(Long.parseLong(id));
-        return ResponseEntity.ok(Map.of("campaign", deletedCampaign).toString());
+    public ResponseEntity<Object> deleteCampaign(@PathVariable String id) {
+        try {
+            Campaign deletedCampaign = campaignService.deleteCampaign(Long.parseLong(id));
+            notificationService.deleteNotificationsByCampaignId(Long.parseLong(id));
+            return ResponseEntity.ok(Map.of("campaign", deletedCampaign).toString());
+        } catch (Exception e) {
+            return ResponseEntity.status(500).body(e.toString());
+        }
     }
 }
