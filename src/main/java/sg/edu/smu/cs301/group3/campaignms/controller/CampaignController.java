@@ -35,12 +35,12 @@ public class CampaignController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<String> getCampaignByCardId(@PathVariable String id) {
+    public ResponseEntity<Object> getCampaignByCardId(@PathVariable String id) {
         try {
             List<CampaignBean> campaignBeans = campaignService.getCampaignByCardId(Long.parseLong(id))
                     .stream().map(campaign -> CampaignBean.fromCampaignModel(campaign, notificationService
                             .getNotificationsByCampaignId(campaign.getCampaignId()))).toList();
-            return ResponseEntity.ok(campaignBeans.toString());
+            return ResponseEntity.ok(campaignBeans);
         } catch (Exception e) {
             return ResponseEntity.status(500).body(e.toString());
         }
@@ -60,7 +60,7 @@ public class CampaignController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<String> editCampaign(@PathVariable String id, @RequestBody CampaignBean campaignBean) {
+    public ResponseEntity<Object> editCampaign(@PathVariable String id, @RequestBody CampaignBean campaignBean) {
         try {
             Campaign editCampaign = campaignService.editCampaign(campaignBean, Long.parseLong(id));
             return ResponseEntity.ok(Map.of("campaign", editCampaign).toString());
@@ -71,7 +71,7 @@ public class CampaignController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<String> deleteCampaign(@PathVariable String id) {
+    public ResponseEntity<Object> deleteCampaign(@PathVariable String id) {
         try {
             Campaign deletedCampaign = campaignService.deleteCampaign(Long.parseLong(id));
             notificationService.deleteNotificationsByCampaignId(Long.parseLong(id));
